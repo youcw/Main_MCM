@@ -40,7 +40,7 @@ void *thread_monitor_temperature(void *pdata)
 
        INFO("Start %s.", __func__);
        for (;;) {
-                temp = get_temperature();
+                //temp = get_temperature();
                 if (temp > TEMPERATURE_ALARM) {
                         /* 开启报警器*/
                         start_alarm();
@@ -106,7 +106,7 @@ void *thread_talkto_boa(void *pdata)
                                 system_reboot();
                                 break;
                         case M_OPEN_LED:
-                                flash_led();
+                                flash_led(0);
                                 break;
                         case M_CLOSE_LED:
                                 stop_led();

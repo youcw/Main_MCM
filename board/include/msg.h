@@ -39,6 +39,12 @@
 #define PC_ARM_HARDWARE_TESTSELF_REQ            (17)
 #define ARM_PC_HARDWARE_TESTSELF_RSP            (18)
 
+/* 时间校准*/
+#define PC_ARM_TIME_ADJUST_REQ                  (19)
+#define ARM_PC_TIME_ADJUST_RSP                  (20)
+
+#define BUF_SIZE                                (5 * 1024)
+
 typedef struct MsgInfo Msg;
 
 /* 消息头 */
@@ -59,9 +65,9 @@ struct RegisterControl {
 /* 软件更新消息 */
 struct SoftWareUpdate {
         Msg             SoftWareUpdateMsg;      /* 消息头*/
-        char            FileName[256];          /* 文件名*/
-        unsigned long   FileLen;                /* 文件长度*/
-        char            buf[1024];          /* 每次传输1K*/
+        char            FileName[20];          /* 文件名*/
+        unsigned long   Len;                /* 文件长度*/
+        char            buf[BUF_SIZE];          /* 每次传输1K*/
         int             Result;           /* 0:成功; -1:失败*/
 };
 
@@ -118,5 +124,17 @@ struct LedControl {
 /* 硬件自检*/
 struct HardWareTestSelf {
     Msg                 HardWareTestSelfMsg;
+};
+
+/* 时间校准*/
+struct TimeAdjust {
+    Msg                 TimeAdjustMsg;      /*消息头 */
+    unsigned    short   year;   
+    unsigned    short   month;
+    unsigned    char    day;
+    unsigned    char    hour;
+    unsigned    char    min;
+    unsigned    char    sec;
+    int                 Result;             /* 0：成功； -1：失败*/
 };
 #endif

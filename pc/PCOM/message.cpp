@@ -189,13 +189,10 @@ void MainWindow::SendGprsMessageFunction(void)
     }
 
     if (GprsMessageInfo.GprsMessageMsg.MsgId == ARM_PC_SENDGPRSMESSAGE_RSP) {
-        QMessageBox::StandardButton button;
-        if(GprsMessageInfo.SendResult == 1) {
-            button = QMessageBox::question(this, tr("结果"),
-                                            QString(tr("发送成功")), QMessageBox::Yes | QMessageBox::No);
+        if(GprsMessageInfo.Result == -1) {
+            QMessageBox::question(this, tr("结果"),QString(tr("发送失败")));
         } else {
-            button = QMessageBox::question(this, tr("结果"),
-                                            QString(tr("发送失败")), QMessageBox::Yes | QMessageBox::No);
+            QMessageBox::question(this, tr("结果"),QString(tr("发送成功")));
         }
     }
 }
@@ -229,13 +226,10 @@ void MainWindow::SendZigbeeMessageFunction(void)
 
     /* 接收处理信息*/
     if (ZigbeeMessageInfo.ZigbeeMessageMsg.MsgId == ARM_PC_SENDZIGBEEMESSAGE_RSP) {
-        QMessageBox::StandardButton button;
-        if (ZigbeeMessageInfo.SendResult == 1) {
-            button = QMessageBox::question(this, tr("结果"), QString(tr("发送成功")),
-                                           QMessageBox::Yes | QMessageBox::No);
+        if (ZigbeeMessageInfo.Result == -1) {
+            QMessageBox::question(this, tr("结果"), QString(tr("发送失败")));
         } else {
-            button = QMessageBox::question(this, tr("结果"), QString(tr("结果")),
-                                           QMessageBox::Yes | QMessageBox::No);
+            QMessageBox::question(this, tr("结果"), QString(tr("发送成功")));
         }
     }
 }
@@ -274,13 +268,10 @@ void MainWindow::BeepSettingFunction(void)
     }
 
     if (BeepInfo.BeepControlMsg.MsgId == ARM_PC_BEEPCONTROL_RSP) {
-        QMessageBox::StandardButton button;
-        if (BeepInfo.SendResult == 1) {
-            button = QMessageBox::question(this, tr("结果"),
-                                           QString(tr("打开成功")), QMessageBox::Yes | QMessageBox::No);
+        if (BeepInfo.Result == -1) {
+            QMessageBox::question(this, tr("结果"),QString(tr("打开失败")));
         } else
-            button = QMessageBox::question(this, tr("结果"),
-                                           QString(tr("打开失败")), QMessageBox::Yes | QMessageBox::No);
+            QMessageBox::question(this, tr("结果"),QString(tr("打开成功")));
     }
 }
 
@@ -324,13 +315,10 @@ void MainWindow::LedSettingFunction(void)
     }
 
     if (LedInfo.LedControlMsg.MsgId == ARM_PC_LEDCONTROL_RSP) {
-        QMessageBox::StandardButton button;
-        if (LedInfo.SendResult == 1) {
-            button = QMessageBox::question(this, tr("结果"),
-                                           QString(tr("设置成功")), QMessageBox::Yes | QMessageBox::No);
+        if (LedInfo.Result == -1) {
+            QMessageBox::question(this, tr("结果"),QString(tr("设置失败")));
         } else
-            button = QMessageBox::question(this, tr("结果"),
-                                           QString(tr("设置失败")), QMessageBox::Yes | QMessageBox::No);
+            QMessageBox::question(this, tr("结果"),QString(tr("设置成功")));
     }
 }
 
@@ -367,47 +355,39 @@ void MainWindow::HardWareTestSelfFunction(void)
 /* 遗留更新进度？*/
 void MainWindow::SoftWareUpdateFunction(void)
 {
-    qDebug("%s", __FUNCTION__);
+    int fd          = -1;
+    int length      = 0;
+    int xferlen     = 0;
 
-    int fd;
-    int length;
-
-    /* 选择要更新的文件*/
-    FileDialog       = new QFileDialog(this);
+    /* 选择更新的文件*/
     QString FileName = FileDialog->getOpenFileName(this);
     if (FileName.isEmpty()) {
-        qDebug("please select a file");
+        qDebug("please select a file!");
         return;
     }
 
+    /* 获取文件属性*/
     File     = new QFile(FileName);
     FileInfo = new QFileInfo(FileName);
+    processdlg->setRange(0, File->size());
 
-    qDebug() << File->fileName();
-    qDebug() << FileInfo->fileName();
-
-    /* 构造消息*/
-    SW_Update.SoftWareUpdateMsg.MsgLen = sizeof(SW_Update)
-                                           - sizeof(SW_Update.SoftWareUpdateMsg);
-    strcpy(SW_Update.FileName, FileInfo->fileName().toLocal8Bit());
-    SW_Update.FileLen = FileInfo->size();
-
+    /* 打开文件*/
     fd = open(File->fileName().toLocal8Bit(), O_RDONLY);
     if(fd < 0) {
         qDebug() << "pen file error!";
         return;
     }
+    strcpy(SW_Update.FileName, FileInfo->fileName().toLocal8Bit());
 
-    while (1) {
+    /* 传输文件，每次传输5K*/
+    while ((length = read(fd, SW_Update.buf, BUF_SIZE)) > 0) {
+        /* 构造消息头*/
         SW_Update.SoftWareUpdateMsg.MsgId  = PC_ARM_SOFTWARE_UPDATE_REQ;
-        /* 读文件*/
-        length = read(fd, SW_Update.buf, BUF_SIZE);
-        if (length < 0) {
-            qDebug() << "read file error!";
-            return;
-        }
+        SW_Update.SoftWareUpdateMsg.MsgLen = sizeof(SW_Update)
+                                               - sizeof(SW_Update.SoftWareUpdateMsg);
+        SW_Update.Len   =   length;
 
-        /* 发送信息*/
+           /* 发送信息*/
         len = sendto(client_sockfd, &SW_Update, sizeof(SW_Update),
                      0, (struct sockaddr *)&client_addr, sin_size);
         if (len < 0) {
@@ -415,27 +395,76 @@ void MainWindow::SoftWareUpdateFunction(void)
             return;
         }
 
-        /* 如果读完，退出*/
-        if (length < BUF_SIZE) {
-            break;
+        /* 查看更新结果*/
+        len = recvfrom(client_sockfd, &SW_Update, sizeof(SW_Update), 0, 0, 0);
+        if (len < 0) {
+            qDebug() << "receive message from arm error!";
+               return;
         }
+
+        /* 解析反馈结果*/
+        if(SW_Update.SoftWareUpdateMsg.MsgId == ARM_PC_SOFTWARE_UPDATE_RSP) {
+            if(SW_Update.Result == -1) {
+                QMessageBox::question(this, tr("更新结果"),QString(tr("更新失败")));
+                return;
+            } else {
+                /* 显示进度*/
+                xferlen += length;
+                processdlg->setValue(xferlen);
+                if (xferlen == File->size())
+                    QMessageBox::question(this, tr("更新结果"),QString(tr("更新成功")));
+            }
+        }
+        bzero(SW_Update.buf, length);
     }
     ::close(fd);
+}
 
-    /* 查看更新结果*/
-    len = recvfrom(client_sockfd, &SW_Update, sizeof(SW_Update), 0, 0, 0);
+/* 更新系统界面时间*/
+void MainWindow::UpdateWallTimeFunction(void)
+{
+    ui->CurrentTimeLabel->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
+}
+
+/* 校准时间*/
+void MainWindow::TimeAdjustFunction(void)
+{
+    QDate   date;
+    QTime   time;
+
+    /* 获取日期信息*/
+    date    =   ui->dateTimeEdit->date();
+    time    =   ui->dateTimeEdit->time();
+
+    /* 构造消息*/
+    TimeInfo.TimeAdjustMsg.MsgId    = PC_ARM_TIME_ADJUST_REQ;
+    TimeInfo.TimeAdjustMsg.MsgLen   = sizeof(TimeInfo)
+                                        - sizeof(TimeInfo.TimeAdjustMsg);
+    /* 解析年月日时分秒*/
+    TimeInfo.year        =  date.year();
+    TimeInfo.month       =  date.month();
+    TimeInfo.day         =  date.day();
+    TimeInfo.hour        =  time.hour();
+    TimeInfo.min         =  time.minute();
+    TimeInfo.sec         =  time.second();
+
+    len  = sendto(client_sockfd, &TimeInfo, sizeof(TimeInfo),
+                  0, (struct sockaddr *)&client_addr, sin_size);
     if (len < 0) {
-        qDebug() << "receive message from arm error!";
+        qDebug("send time adjust message error!");
         return;
     }
 
-    if(SW_Update.SoftWareUpdateMsg.MsgId == ARM_PC_SOFTWARE_UPDATE_RSP) {
-        QMessageBox::StandardButton button;
-        if(SW_Update.UpdateResult == 1) {
-            button = QMessageBox::question(this, tr("更新结果"),
-                                           QString(tr("更新成功")), QMessageBox::Yes | QMessageBox::No);
-        } else
-            button = QMessageBox::question(this, tr("更新结果"),
-                                           QString(tr("更新失败")), QMessageBox::Yes | QMessageBox::No);
+    len = recvfrom(client_sockfd, &TimeInfo, sizeof(TimeInfo), 0, 0, 0);
+    if (len < 0) {
+        qDebug("receive time adjust result error!");
+        return;
+    }
+
+    if (TimeInfo.TimeAdjustMsg.MsgId == ARM_PC_TIME_ADJUST_RSP) {
+        if (TimeInfo.Result == -1)
+            QMessageBox::information(this, tr("设置结果"), QString(tr("设置失败")));
+        else
+            QMessageBox::information(this, tr("设置结果"), QString(tr("设置成功")));
     }
 }

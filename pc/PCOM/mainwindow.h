@@ -16,8 +16,10 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QTextCodec>
+#include <QDateTime>
+#include <QProgressDialog>
+
 #include "msg.h"
-#define BUF_SIZE    1024
 
 namespace Ui {
 class MainWindow;
@@ -44,6 +46,8 @@ private slots:
     void LedSettingFunction(void);
     void HardWareTestSelfFunction(void);
     void SoftWareUpdateFunction(void);
+    void UpdateWallTimeFunction(void);
+    void TimeAdjustFunction(void);
 
 public:
     /* 网络通信变量*/
@@ -57,11 +61,15 @@ public:
 
     /* 定时器*/
     QTimer *timer;
+    QTimer *systimer;
 
     /* 文件操作*/
     QFileDialog *FileDialog;
     QFileInfo   *FileInfo;
     QFile       *File;
+
+    /* 显示进度条*/
+    QProgressDialog    *processdlg;
 
     /* 查看设备状态*/
     struct CheckMachineStat MachineInfo;
@@ -89,6 +97,9 @@ public:
 
     /* 硬件自检*/
     struct HardWareTestSelf HardWareInfo;
+
+    /* 时间校准*/
+    struct TimeAdjust       TimeInfo;
 };
 
 #endif // MAINWINDOW_H

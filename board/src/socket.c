@@ -14,7 +14,8 @@
  * 返回值：-1：失败；0：成功
  * 参数：无
  * */
-#define BUF_SIZE    1024
+
+#define     SIZE    (1024 * 6)
 
 int create_socket(void)
 {
@@ -23,7 +24,7 @@ int create_socket(void)
         int server_sockfd;
         int len;
         int sin_size;
-        char buf[BUF_SIZE];
+        char buf[SIZE];
         struct sockaddr_in server_addr;
         struct sockaddr_in client_addr;
 
@@ -48,9 +49,11 @@ int create_socket(void)
 
         INFO("waiting for packet......\n");
 
+        bzero(buf, SIZE);
+        
         for(;;) {
                 /* 接收消息*/
-                if((len = recvfrom(server_sockfd, buf, BUF_SIZE, 0, 
+                if((len = recvfrom(server_sockfd, buf, SIZE, 0, 
                                                 (struct sockaddr*)&client_addr, &sin_size)) < 0) {
                         ERROR("receive packet error\n");
                         return -1;
@@ -85,27 +88,32 @@ int create_socket(void)
 
                                 /* GPRS短信息*/
                         case PC_ARM_SEND_GPRS_MESSAGE_REQ:
-                                send_gprs_message_req();
+                                send_gprs_message_req(buf);
                                 break;
                 
                                 /* 发送ZIGBEE信息*/
                         case PC_ARM_SEND_ZIGBEE_MESSAGE_REQ:
-                                send_zigbee_message_req();
+                                send_zigbee_message_req(buf);
                                 break;
 
                                 /* 报警器控制*/
                         case PC_ARM_BEEP_CONTROL_REQ:
-                                beep_control_req();
+                                beep_control_req(buf);
                                 break;
 
                                 /* LED控制*/
                         case PC_ARM_LEDS_CONTROL_REQ:
-                                led_control_req();
+                                led_control_req(buf);
                                 break;
 
                                 /* 硬件自检*/
                         case PC_ARM_HARDWARE_TESTSELF_REQ:
-                                hardware_selftest_req();
+                                hardware_selftest_req(buf);
+                                break;
+                
+                                /* 时间校准*/
+                        case PC_ARM_TIME_ADJUST_REQ:
+                                time_adjust(buf);
                                 break;
                 }
 

@@ -1,6 +1,7 @@
 #ifndef __COMMON_H
 #define __COMMON_H
 
+#include <stdlib.h>
 #include <pthread.h>
 #include <sys/types.h>
 #include <sys/ipc.h>

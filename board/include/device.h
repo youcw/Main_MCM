@@ -66,10 +66,10 @@ extern int start_alarm(void);
 extern int stop_alarm(void);
 
 /* 闪灯*/
-extern void flash_led(void);
+extern int flash_led(unsigned long time);
 
 /* 关闭灯*/
-extern void stop_led(void);
+extern int stop_led(void);
 
 /* 读温度*/
 extern float get_ds18b20_temperature(void);

@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     /* 创建socket跟设备进行通信*/
     client_addr.sin_family      = AF_INET;
-    client_addr.sin_addr.s_addr = inet_addr("192.168.0.105");   //无限制
+    client_addr.sin_addr.s_addr = inet_addr("192.168.0.100");   //无限制
     client_addr.sin_port        = htons(8000);
 
     if ((client_sockfd = socket(PF_INET,SOCK_DGRAM,0)) < 0) {
@@ -25,6 +25,16 @@ MainWindow::MainWindow(QWidget *parent) :
     /*启动定时器，每隔5S查看设备状态和系统状态*/
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(CheckMachineStatFunction()));
+
+    /* 启动定时器，更新时间*/
+    systimer = new QTimer(this);
+    connect(systimer, SIGNAL(timeout()), this, SLOT(UpdateWallTimeFunction()));
+
+    /* 进度条*/
+    processdlg          =   new QProgressDialog(this);
+
+    /* 选择要更新的文件*/
+    FileDialog          = new QFileDialog(this);
 
     /* 寄存器设置*/
     connect(ui->RegisterSettingButton, SIGNAL(clicked()), this, SLOT(RegisterSettingFunction()));
@@ -50,8 +60,11 @@ MainWindow::MainWindow(QWidget *parent) :
     /* 软件更新*/
     connect(ui->SoftWareUpdateButton, SIGNAL(clicked()), this, SLOT(SoftWareUpdateFunction()));
 
+    /* 时间校准*/
+    connect(ui->TimeAdjustButton, SIGNAL(clicked()), this, SLOT(TimeAdjustFunction()));
     /* 启动定时器*/
     timer->start(5000000);
+    systimer->start(1000);
 }
 
 MainWindow::~MainWindow()

@@ -184,18 +184,18 @@ int stop_alarm(void)
  * 返回值：无
  * 参数：无
  * */
-void flash_led(void)
+int flash_led(unsigned long time)
 {
-    ioctl(ledfd, LED_ON);
+    return ioctl(ledfd, LED_ON);
 }
 
 /* 功能：关闭灯
  * 返回值：无
  * 参数：无
  * */
-void stop_led(void)
+int stop_led(void)
 {
-    ioctl(ledfd, LED_OFF);
+    return ioctl(ledfd, LED_OFF);
 }
 
 /* 功能：获取温度值

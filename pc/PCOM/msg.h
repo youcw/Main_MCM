@@ -43,6 +43,11 @@
 #define PC_ARM_HARDWARE_TESTSELF_REQ            (17)
 #define ARM_PC_HARDWARE_TESTSELF_RSP            (18)
 
+/* 时间校准*/
+#define PC_ARM_TIME_ADJUST_REQ                  (19)
+#define ARM_PC_TIME_ADJUST_RSP                  (20)
+
+#define BUF_SIZE                                (1024*5)
 typedef struct MsgInfo Msg;
 
 /* 消息头 */
@@ -62,10 +67,10 @@ struct RegisterControl {
 /* 软件更新消息 */
 struct SoftWareUpdate {
         Msg             SoftWareUpdateMsg;      /* 消息头*/
-        char            FileName[256];          /* 文件名*/
-        unsigned long   FileLen;                /* 文件长度*/
-        char            buf[1024];          /* 每次传输1K*/
-        unsigned long   UpdateResult;           /* 0:成功; 1:失败*/
+        char            FileName[20];          /* 文件名*/
+        unsigned long   Len;                    /* 传输长度*/
+        char            buf[BUF_SIZE];           /* 缓冲区*/
+        int             Result;                 /* 0:成功; -1:失败*/
 };
 
 /* 查询系统状态 */
@@ -89,36 +94,48 @@ struct EepromControl {
 
 /* GPRS短信息*/
 struct GprsMessage {
-    Msg     GprsMessageMsg;             /* 消息头 */
-    char    TelephoneNumber[12];        /* 电话号码 */
-    char    Message[128];               /* 短信息 */
-    unsigned long SendResult;           /* 1:成功，0：失败*/
+    Msg             GprsMessageMsg;             /* 消息头 */
+    char            TelephoneNumber[12];        /* 电话号码 */
+    char            Message[128];               /* 短信息 */
+    int             Result;                     /* 0:成功，-1：失败*/
 };
 
 /* ZIGBEE控制命令*/
 struct ZigbeeMessage {
-    Msg     ZigbeeMessageMsg;           /* 消息头*/
-    char    Message[128];               /* 控制命令 */
-    unsigned long SendResult;           /* 1:成功， 0：失败*/
+    Msg             ZigbeeMessageMsg;           /* 消息头*/
+    char            Message[128];               /* 控制命令 */
+    int             Result;                 /* 0:成功， -1：失败*/
 };
 
 /* 报警器控制*/
 struct BeepControl {
-    Msg     BeepControlMsg;              /* 消息头*/
-    unsigned long Flag;                 /* 1=打开，0=关闭*/
-    unsigned long SendResult;           /* 1:成功， 0：失败*/
+    Msg             BeepControlMsg;              /* 消息头*/
+    unsigned long   Flag;                 /* 1=打开，0=关闭*/
+    int             Result;                 /* 0:成功， -1：失败*/
 };
 
 /* LED控制*/
 struct LedControl {
-    Msg     LedControlMsg;              /* 消息头 */
-    unsigned long Flag;                 /* 1=打开，0=关闭*/
-    unsigned long FlashTime;            /* 闪烁时间间隔*/
-    unsigned long SendResult;           /* 1:成功， 0：失败*/
+    Msg             LedControlMsg;              /* 消息头 */
+    unsigned long   Flag;                 /* 1=打开，0=关闭*/
+    unsigned long   FlashTime;            /* 闪烁时间间隔*/
+    int             Result;                 /* 0:成功， -1：失败*/
 };
 
 /* 硬件自检*/
 struct HardWareTestSelf {
-    Msg     HardWareTestSelfMsg;
+    Msg             HardWareTestSelfMsg;
+};
+
+/* 时间校准*/
+struct TimeAdjust {
+    Msg                 TimeAdjustMsg;      /*消息头 */
+    unsigned    short   year;
+    unsigned    short   month;
+    unsigned    char    day;
+    unsigned    char    hour;
+    unsigned    char    min;
+    unsigned    char    sec;
+    int                 Result;             /* 0：成功； -1：失败*/
 };
 #endif // MSG_H

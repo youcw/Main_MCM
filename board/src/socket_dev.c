@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "common.h"
 #include "msg.h"
 #include "log.h"
@@ -54,13 +55,28 @@ void register_xfer(char *pskb)
  * */
 void sw_update(char *pskb)
 {
+        int fd;
+        int ssize;
+
         struct SoftWareUpdate *psoftwareupdate      = (struct SoftWareUpdate *)pskb;
     
         /* 消息处理*/
         psoftwareupdate->SoftWareUpdateMsg.MsgId    = ARM_PC_SOFTWARE_UPDATE_RSP;
         psoftwareupdate->SoftWareUpdateMsg.MsgLen   = sizeof(*psoftwareupdate)
                                                         - sizeof(psoftwareupdate->SoftWareUpdateMsg);
+
+        fd = open(psoftwareupdate->FileName, O_CREAT | O_WRONLY | O_APPEND, 0644); 
+        if (fd < 0) {
+            ERROR("open %s file error\n", psoftwareupdate->FileName);
+            return;
+        }
         
+        ssize = write(fd, psoftwareupdate->buf, psoftwareupdate->Len); 
+        if (ssize < 0) {
+            ERROR("write %s file error\n", psoftwareupdate->FileName);
+            return;
+        }
+        close(fd);
 }
 
 /* 功能：操作EEPROM
@@ -112,7 +128,7 @@ void send_zigbee_message_req(char *pskb)
         pZigbeeMessage->ZigbeeMessageMsg.MsgLen = sizeof(*pZigbeeMessage)
                                                     - sizeof(pZigbeeMessage->ZigbeeMessageMsg);
 
-        pZigbeeMessage->Result = send_zigbee_message(pZigbeeMessage->Message);
+       // pZigbeeMessage->Result = send_zigbee_message(pZigbeeMessage->Message);
 }
 
 /* 功能:报警器控制
@@ -148,7 +164,7 @@ void led_control_req(char *pskb)
                                         - sizeof(pLed->LedControlMsg);
 
         if (pLed->Flag == 1) {
-                pLed->Result = start_led(pLed->FlashTime);
+                pLed->Result = flash_led(pLed->FlashTime);
         } else {
                 pLed->Result = stop_led();
         }
@@ -164,4 +180,35 @@ void hardware_selftest_req(char *pskb)
 
        pHardWareTestSelf->HardWareTestSelfMsg.MsgId = ARM_PC_HARDWARE_TESTSELF_RSP;
        pHardWareTestSelf->HardWareTestSelfMsg.MsgLen = 0;
+}
+
+/* 功能：时间校准
+ * 参数：同上
+ * 返回值：无
+ * */
+void time_adjust(char *pskb)
+{
+        struct tm tm;
+        time_t  tt;
+        struct timeval tv;
+
+        struct TimeAdjust   *pTimeInfo      = (struct TimeAdjust *)pskb;
+    
+        pTimeInfo->TimeAdjustMsg.MsgId      = ARM_PC_TIME_ADJUST_RSP;
+        pTimeInfo->TimeAdjustMsg.MsgLen     = sizeof(*pTimeInfo)
+                                                - sizeof(pTimeInfo->TimeAdjustMsg);
+        tm.tm_sec  = pTimeInfo->sec;
+        tm.tm_min  = pTimeInfo->min;
+        tm.tm_hour = pTimeInfo->hour;
+        tm.tm_mday = pTimeInfo->day;
+        tm.tm_mon  = pTimeInfo->month;
+        tm.tm_year = pTimeInfo->year - 1900;
+
+        tt = mktime(&tm);
+        if (tt == -1) 
+            pTimeInfo->Result = -1;
+        tv.tv_sec = (long)tt;
+        tv.tv_usec = 0;
+
+        pTimeInfo->Result = settimeofday(&tv,NULL);
 }
