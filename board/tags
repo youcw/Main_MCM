@@ -1,0 +1,193 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADC_DEV	include/device.h	27;"	d
+ADC_INPUT_BIT	include/device.h	16;"	d
+ADC_INPUT_PIN	include/device.h	17;"	d
+ALARM_OFF	include/device.h	13;"	d
+ALARM_ON	include/device.h	12;"	d
+ARM_PC_BEEPCONTROL_RSP	include/msg.h	32;"	d
+ARM_PC_CHECKMACHINESTAT_RSP	include/msg.h	8;"	d
+ARM_PC_EEPROM_Control_Rsp	include/msg.h	16;"	d
+ARM_PC_HARDWARE_TESTSELF_RSP	include/msg.h	40;"	d
+ARM_PC_LEDCONTROL_RSP	include/msg.h	36;"	d
+ARM_PC_RegisterControl_Rsp	include/msg.h	12;"	d
+ARM_PC_SENDGPRSMESSAGE_RSP	include/msg.h	24;"	d
+ARM_PC_SENDZIGBEEMESSAGE_RSP	include/msg.h	28;"	d
+ARM_PC_SOFTWARE_UPDATE_RSP	include/msg.h	20;"	d
+Addr	include/msg.h	/^        unsigned long   Addr;                   \/* 寄存器地址*\/ $/;"	m	struct:RegisterControl
+BEEP_DEV	include/device.h	33;"	d
+BUF_SIZE	net_test/client.c	7;"	d	file:
+BUF_SIZE	net_test/server.c	8;"	d	file:
+BUF_SIZE	src/socket.c	17;"	d	file:
+BUTTON_DEV	include/device.h	28;"	d
+BeepControl	include/msg.h	/^struct BeepControl {$/;"	s
+BeepControlMsg	include/msg.h	/^    Msg     BeepControlMsg;              \/* 消息头*\/$/;"	m	struct:BeepControl
+CheckMachineStat	include/msg.h	/^struct CheckMachineStat {$/;"	s
+CheckMachineStatMsg	include/msg.h	/^        Msg             CheckMachineStatMsg;          \/* 消息头*\/$/;"	m	struct:CheckMachineStat
+ControlEeprom	include/msg.h	/^struct ControlEeprom {$/;"	s
+ControlEepromMsg	include/msg.h	/^        Msg             ControlEepromMsg;       \/* 消息头*\/ $/;"	m	struct:ControlEeprom
+CpuFreq	include/msg.h	/^        unsigned long   CpuFreq;                      \/* 当前CPU频率*\/$/;"	m	struct:CheckMachineStat
+Data	include/msg.h	/^        unsigned long   Data;                   \/* 传输数据 *\/$/;"	m	struct:RegisterControl
+EEPROM_DEV	include/device.h	29;"	d
+EEPROM_READ	include/device.h	20;"	d
+EEPROM_WRITE	include/device.h	21;"	d
+ERROR	include/log.h	16;"	d
+ERROR	net_test/client.c	8;"	d	file:
+ERROR	net_test/server.c	9;"	d	file:
+FileLen	include/msg.h	/^        unsigned long   FileLen;                \/* 文件长度*\/$/;"	m	struct:SoftWareUpdate
+FileName	include/msg.h	/^        char            FileName[256];          \/* 文件名*\/$/;"	m	struct:SoftWareUpdate
+Flag	include/msg.h	/^    unsigned long Flag;                 \/* 1=打开，0=关闭*\/$/;"	m	struct:BeepControl
+Flag	include/msg.h	/^    unsigned long Flag;                 \/* 1=打开，0=关闭*\/$/;"	m	struct:LedControl
+FlashTime	include/msg.h	/^    unsigned long FlashTime;            \/* 闪烁时间间隔*\/$/;"	m	struct:LedControl
+FreeDiskSpace	include/msg.h	/^        unsigned long   FreeDiskSpace;                \/* 当前系统剩余磁盘*\/$/;"	m	struct:CheckMachineStat
+FreeMemSpace	include/msg.h	/^        unsigned long   FreeMemSpace;                 \/* 当前系统剩余内存*\/$/;"	m	struct:CheckMachineStat
+GPRS_DEV	include/device.h	31;"	d
+GprsMessage	include/msg.h	/^struct GprsMessage {$/;"	s
+GprsMessageMsg	include/msg.h	/^    Msg     GprsMessageMsg;             \/* 消息头 *\/$/;"	m	struct:GprsMessage
+HardWareTestSelf	include/msg.h	/^struct HardWareTestSelf {$/;"	s
+HardWareTestSelfMsg	include/msg.h	/^    Msg     HardWareTestSelfMsg;$/;"	m	struct:HardWareTestSelf
+INFO	include/log.h	17;"	d
+INFO	net_test/client.c	9;"	d	file:
+INFO	net_test/server.c	10;"	d	file:
+LCD_DEV	include/device.h	30;"	d
+LED_DEV	include/device.h	25;"	d
+LED_OFF	include/device.h	15;"	d
+LED_ON	include/device.h	14;"	d
+LOG_BUF_MAX	src/log.c	19;"	d	file:
+LOG_DEFAULT_LEVEL	include/log.h	20;"	d
+LedControl	include/msg.h	/^struct LedControl {$/;"	s
+LedControlMsg	include/msg.h	/^    Msg     LedControlMsg;              \/* 消息头 *\/$/;"	m	struct:LedControl
+MSG_LEN	src/init.c	137;"	d	file:
+MSG_PATH	include/common.h	18;"	d
+MSG_PROJ_ID	include/common.h	19;"	d
+M_CLOSE_ALARM	include/common.h	25;"	d
+M_CLOSE_LED	include/common.h	23;"	d
+M_FINISHED	src/thread.c	72;"	d	file:
+M_OPEN_ALARM	include/common.h	24;"	d
+M_OPEN_LED	include/common.h	22;"	d
+M_REBOOT	include/common.h	21;"	d
+MachineStat	include/msg.h	/^        unsigned long   MachineStat;                  \/* 板卡状态 1:正常，0：异常*\/$/;"	m	struct:CheckMachineStat
+Message	include/msg.h	/^    char    Message[128];               \/* 控制命令 *\/$/;"	m	struct:ZigbeeMessage
+Message	include/msg.h	/^    char    Message[128];               \/* 短信息 *\/$/;"	m	struct:GprsMessage
+Msg	include/msg.h	/^typedef struct MsgInfo Msg;$/;"	t	typeref:struct:MsgInfo
+MsgId	include/msg.h	/^        unsigned long MsgId;                    \/* 消息类型*\/$/;"	m	struct:MsgInfo
+MsgInfo	include/msg.h	/^struct MsgInfo {$/;"	s
+MsgLen	include/msg.h	/^        unsigned long MsgLen;                   \/* 消息长度，不包含消息头*\/$/;"	m	struct:MsgInfo
+PC_ARM_BEEPCONTROL_REQ	include/msg.h	31;"	d
+PC_ARM_CHECKMACHINESTAT_REQ	include/msg.h	7;"	d
+PC_ARM_EEPROM_Control	include/msg.h	15;"	d
+PC_ARM_HARDWARE_TESTSELF_REQ	include/msg.h	39;"	d
+PC_ARM_LEDCONTROL_REQ	include/msg.h	35;"	d
+PC_ARM_RegisterControl	include/msg.h	11;"	d
+PC_ARM_SENDGPRSMESSAGE_REQ	include/msg.h	23;"	d
+PC_ARM_SENDZIGBEEMESSAGE_REQ	include/msg.h	27;"	d
+PC_ARM_SOFTWARE_UPDATE_REQ	include/msg.h	19;"	d
+READ	include/device.h	8;"	d
+REGEDITOR_DEV	include/device.h	24;"	d
+REGEDITOR_READ	include/device.h	18;"	d
+REGEDITOR_WRITE	include/device.h	19;"	d
+RegisterControl	include/msg.h	/^struct RegisterControl {$/;"	s
+RegsMsg	include/msg.h	/^        Msg             RegsMsg;                \/* 消息头 *\/$/;"	m	struct:RegisterControl
+SendResult	include/msg.h	/^    unsigned long SendResult;           \/* 1:成功， 0：失败*\/$/;"	m	struct:BeepControl
+SendResult	include/msg.h	/^    unsigned long SendResult;           \/* 1:成功， 0：失败*\/$/;"	m	struct:LedControl
+SendResult	include/msg.h	/^    unsigned long SendResult;           \/* 1:成功， 0：失败*\/$/;"	m	struct:ZigbeeMessage
+SendResult	include/msg.h	/^    unsigned long SendResult;           \/* 1:成功，0：失败*\/$/;"	m	struct:GprsMessage
+SoftWareUpdate	include/msg.h	/^struct SoftWareUpdate {$/;"	s
+SoftWareUpdateMsg	include/msg.h	/^        Msg             SoftWareUpdateMsg;      \/* 消息头*\/$/;"	m	struct:SoftWareUpdate
+TEMPERATURE_ALARM	include/device.h	36;"	d
+TEMP_DEV	include/device.h	26;"	d
+TelephoneNumber	include/msg.h	/^    char    TelephoneNumber[12];        \/* 电话号码 *\/$/;"	m	struct:GprsMessage
+TempData	include/msg.h	/^        float           TempData;                     \/* 温度值*\/$/;"	m	struct:CheckMachineStat
+UpdateResult	include/msg.h	/^        unsigned long   UpdateResult;           \/* 0:成功; 1:失败*\/$/;"	m	struct:SoftWareUpdate
+Voltage	include/msg.h	/^        float           Voltage;                      \/* 获取电压*\/$/;"	m	struct:CheckMachineStat
+WRITE	include/device.h	9;"	d
+ZIGBEE_DEV	include/device.h	32;"	d
+ZigbeeMessage	include/msg.h	/^struct ZigbeeMessage {$/;"	s
+ZigbeeMessageMsg	include/msg.h	/^    Msg     ZigbeeMessageMsg;           \/* 消息头*\/$/;"	m	struct:ZigbeeMessage
+__COMMON_H	include/common.h	2;"	d
+__DEVICE_H	include/device.h	2;"	d
+__LOG_H	include/log.h	2;"	d
+__MSG_H	include/msg.h	2;"	d
+__SOCKET_H	include/socket.h	2;"	d
+__bool	include/common.h	/^typedef enum __bool {false=0, true=1}bool;$/;"	g
+adc_config	src/init.c	/^void adc_config(int bit, int channel)$/;"	f
+adcbit	src/init.c	/^static int adcbit;$/;"	v	file:
+adcchannel	src/init.c	/^static int adcchannel;$/;"	v	file:
+adcfd	include/device.h	/^int adcfd;$/;"	v
+addr	include/msg.h	/^        unsigned long   addr;                   \/* 地址 *\/$/;"	m	struct:ControlEeprom
+addr	net_test/client.c	/^    unsigned long addr;$/;"	m	struct:msginfo	file:
+addr	net_test/server.c	/^    unsigned long addr;$/;"	m	struct:msginfo	file:
+beepfd	include/device.h	/^int beepfd;$/;"	v
+bool	include/common.h	/^typedef enum __bool {false=0, true=1}bool;$/;"	t	typeref:enum:__bool
+buf	include/msg.h	/^        char            buf[1024];          \/* 每次传输1K*\/$/;"	m	struct:SoftWareUpdate
+buttonfd	include/device.h	/^int buttonfd;$/;"	v
+create_socket	src/socket.c	/^int create_socket(void)$/;"	f
+create_thread	src/thread.c	/^int create_thread(void)$/;"	f
+data	include/msg.h	/^        unsigned long   data;                   \/* 数据 *\/$/;"	m	struct:ControlEeprom
+eeprom_xfer	src/socket_dev.c	/^void eeprom_xfer(char *pskb)$/;"	f
+eepromfd	include/device.h	/^int eepromfd;$/;"	v
+false	include/common.h	/^typedef enum __bool {false=0, true=1}bool;$/;"	e	enum:__bool
+flag	include/msg.h	/^        unsigned long   flag;                   \/* 1:读; 0:写*\/$/;"	m	struct:ControlEeprom
+flag	include/msg.h	/^        unsigned long   flag;                   \/* 1:读; 0:写*\/$/;"	m	struct:RegisterControl
+flash_led	src/init.c	/^void flash_led(void)$/;"	f
+get_adc_voltage	src/init.c	/^float get_adc_voltage(void)$/;"	f
+get_button_key	src/init.c	/^bool get_button_key(void)$/;"	f
+get_cpu_freq	net_test/systeminfo_test.c	/^float get_cpu_freq(void)$/;"	f
+get_cpu_freq	src/systeminfo.c	/^float get_cpu_freq(void)$/;"	f
+get_ds18b20_temperature	src/init.c	/^float get_ds18b20_temperature(void)$/;"	f
+get_freedisk_space	net_test/systeminfo_test.c	/^unsigned long get_freedisk_space(void)$/;"	f
+get_freedisk_space	src/systeminfo.c	/^unsigned long get_freedisk_space(void)$/;"	f
+get_freemem_space	net_test/systeminfo_test.c	/^unsigned long get_freemem_space(void)$/;"	f
+get_freemem_space	src/systeminfo.c	/^unsigned long get_freemem_space(void)$/;"	f
+get_machine_stat	src/socket_dev.c	/^void get_machine_stat(char *pskb)$/;"	f
+get_temperature	src/socket_dev.c	/^void get_temperature(char *pskb)$/;"	f
+get_voltage	src/socket_dev.c	/^void get_voltage(char *pskb)$/;"	f
+gprs_config	src/init.c	/^int gprs_config(void)$/;"	f
+gprsfd	include/device.h	/^int gprsfd;$/;"	v
+init_device	src/init.c	/^int init_device(void)$/;"	f
+init_uart	src/init.c	/^int init_uart(int fd, int speed)$/;"	f
+lcdfd	include/device.h	/^int lcdfd;$/;"	v
+ledfd	include/device.h	/^int ledfd;$/;"	v
+log_close	src/log.c	/^void log_close(void)$/;"	f
+log_fd	src/log.c	/^static int log_fd = -1;$/;"	v	file:
+log_init	src/log.c	/^void log_init(void)$/;"	f
+log_level	src/log.c	/^static int log_level = LOG_DEFAULT_LEVEL;$/;"	v	file:
+log_set_level	src/log.c	/^void log_set_level(int level) $/;"	f
+log_write	src/log.c	/^void log_write(int level, const char *fmt, ...) $/;"	f
+main	net_test/client.c	/^int main(void)$/;"	f
+main	net_test/server.c	/^int main(void)$/;"	f
+main	net_test/systeminfo_test.c	/^int main(int argc, char *argv[])$/;"	f
+main	src/main.c	/^int main(int argc, char *argv[])$/;"	f
+msg_buf	include/common.h	/^struct msg_buf {$/;"	s
+msgflag	include/common.h	/^int     msgflag;$/;"	v
+msgid	include/common.h	/^int     msgid;$/;"	v
+msgid	net_test/client.c	/^    unsigned long msgid;$/;"	m	struct:msginfo	file:
+msgid	net_test/server.c	/^    unsigned long msgid;$/;"	m	struct:msginfo	file:
+msginfo	net_test/client.c	/^struct msginfo {$/;"	s	file:
+msginfo	net_test/server.c	/^struct msginfo {$/;"	s	file:
+msgkey	include/common.h	/^key_t   msgkey;$/;"	v
+mtext	include/common.h	/^        char mtext[1];$/;"	m	struct:msg_buf
+mtype	include/common.h	/^        long mtype;$/;"	m	struct:msg_buf
+parse_string	net_test/systeminfo_test.c	/^char *parse_string(char *file, char *string)$/;"	f
+parse_string	src/systeminfo.c	/^char *parse_string(char *file, char *string)$/;"	f
+regeditorfd	include/device.h	/^int regeditorfd;$/;"	v
+register_xfer	src/socket_dev.c	/^void register_xfer(char *pskb)$/;"	f
+send_gprs_message	src/init.c	/^int send_gprs_message(char *telephone, char *msg)$/;"	f
+start_alarm	src/init.c	/^void start_alarm(void)$/;"	f
+stop_alarm	src/init.c	/^void stop_alarm(void)$/;"	f
+stop_led	src/init.c	/^void stop_led(void)$/;"	f
+sw_update	src/socket_dev.c	/^void sw_update(char *pskb)$/;"	f
+system_reboot	src/init.c	/^void system_reboot(void)$/;"	f
+tempfd	include/device.h	/^int tempfd;$/;"	v
+thread_boa	include/common.h	/^pthread_t       thread_boa;$/;"	v
+thread_infrared	include/common.h	/^pthread_t       thread_infrared;$/;"	v
+thread_monitor_infrared	src/thread.c	/^void *thread_monitor_infrared(void *pdata)$/;"	f
+thread_monitor_temperature	src/thread.c	/^void *thread_monitor_temperature(void *pdata)$/;"	f
+thread_talkto_boa	src/thread.c	/^void *thread_talkto_boa(void *pdata)$/;"	f
+thread_temperature	include/common.h	/^pthread_t       thread_temperature;$/;"	v
+true	include/common.h	/^typedef enum __bool {false=0, true=1}bool;$/;"	e	enum:__bool
+zigbeefd	include/device.h	/^int zigbeefd;$/;"	v
