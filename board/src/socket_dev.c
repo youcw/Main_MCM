@@ -12,6 +12,8 @@ void get_machine_stat(char *pskb)
         struct CheckMachineStat *pBoardStat     = (struct CheckMachineStat*)pskb;
        
         /* 填充消息结构*/
+        pBoardStat->CheckMachineStatMsg.MsgId   = ARM_PC_CHECKMACHINESTAT_RSP;
+        
         pBoardStat->MachineStat                 = 1;
         pBoardStat->TempData                    = get_ds18b20_temperature();
         pBoardStat->Voltage                     = get_adc_voltage();
@@ -29,7 +31,11 @@ void register_xfer(char *pskb)
 {
         unsigned long buf[3];
 
-        struct RegisterControl *pregs = (struct RegisterControl *)pskb;
+        struct RegisterControl *pregs   = (struct RegisterControl *)pskb;
+        
+        /*填充消息*/
+        pregs->RegsMsg.MsgId            = ARM_PC_RegisterControl_Rsp;
+        
         buf[0] = pregs->Addr;
         buf[1] = pregs->Data;
         printf("addr = %#x data = %#x flag = %d\n", buf[0], buf[1], pregs->flag);
