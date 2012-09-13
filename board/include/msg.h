@@ -62,7 +62,7 @@ struct SoftWareUpdate {
         char            FileName[256];          /* 文件名*/
         unsigned long   FileLen;                /* 文件长度*/
         char            buf[1024];          /* 每次传输1K*/
-        unsigned long   UpdateResult;           /* 0:成功; 1:失败*/
+        int             Result;           /* 0:成功; -1:失败*/
 };
 
 /* 查询系统状态 */

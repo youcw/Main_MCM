@@ -387,7 +387,6 @@ void MainWindow::SoftWareUpdateFunction(void)
     qDebug() << FileInfo->fileName();
 
     /* 构造消息*/
-    SW_Update.SoftWareUpdateMsg.MsgId  = PC_ARM_SOFTWARE_UPDATE_REQ;
     SW_Update.SoftWareUpdateMsg.MsgLen = sizeof(SW_Update)
                                            - sizeof(SW_Update.SoftWareUpdateMsg);
     strcpy(SW_Update.FileName, FileInfo->fileName().toLocal8Bit());
@@ -400,6 +399,7 @@ void MainWindow::SoftWareUpdateFunction(void)
     }
 
     while (1) {
+        SW_Update.SoftWareUpdateMsg.MsgId  = PC_ARM_SOFTWARE_UPDATE_REQ;
         /* 读文件*/
         length = read(fd, SW_Update.buf, BUF_SIZE);
         if (length < 0) {

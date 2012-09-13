@@ -64,42 +64,42 @@ int create_socket(void)
                 memcpy(&msg_head, buf, sizeof(msg_head));
                 switch(msg_head.MsgId) {
                         /* 板卡状态*/
-                        case PC_ARM_CHECKMACHINESTAT_REQ:
+                        case PC_ARM_CHECK_MACHINE_STAT_REQ:
                                 get_machine_stat(buf);
                                 break;
 
                                 /* 寄存器操作请求*/
-                        case PC_ARM_RegisterControl:
+                        case PC_ARM_REGISTER_RW_REQ:
                                 register_xfer(buf);
                                 break;
 
                                 /* 软件更新 */
-                        case PC_ARM_SoftWareUpdate:
+                        case PC_ARM_SOFTWARE_UPDATE_REQ:
                                 sw_update(buf);
                                 break;
 
                                 /* EEPROM */
-                        case PC_ARM_EEPROM_Control:
+                        case PC_ARM_EEPROM_RW_REQ:
                                 eeprom_xfer(buf); 
                                 break;
 
                                 /* GPRS短信息*/
-                        case PC_ARM_SENDGPRSMESSAGE_REQ:
+                        case PC_ARM_SEND_GPRS_MESSAGE_REQ:
                                 send_gprs_message_req();
                                 break;
                 
                                 /* 发送ZIGBEE信息*/
-                        case PC_ARM_SENDZIGBEEMESSAGE_REQ:
+                        case PC_ARM_SEND_ZIGBEE_MESSAGE_REQ:
                                 send_zigbee_message_req();
                                 break;
 
                                 /* 报警器控制*/
-                        case PC_ARM_BEEPCONTROL_REQ:
+                        case PC_ARM_BEEP_CONTROL_REQ:
                                 beep_control_req();
                                 break;
 
                                 /* LED控制*/
-                        case PC_ARM_LEDCONTROL_REQ:
+                        case PC_ARM_LEDS_CONTROL_REQ:
                                 led_control_req();
                                 break;
 
