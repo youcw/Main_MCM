@@ -12,8 +12,10 @@ void get_machine_stat(char *pskb)
         struct CheckMachineStat *pBoardStat     = (struct CheckMachineStat*)pskb;
        
         /* 填充消息结构*/
-        pBoardStat->CheckMachineStatMsg.MsgId   = ARM_PC_CHECKMACHINESTAT_RSP;
-        
+        pBoardStat->CheckMachineStatMsg.MsgId   = ARM_PC_CHECK_MACHINE_STAT_RSP;
+        pBoardStat->CheckMachineStatMsg.MsgLen  = sizeof(*pBoardStat) 
+                                                    - sizeof(pBoardStat->CheckMachineStatMsg);
+
         pBoardStat->MachineStat                 = 1;
         pBoardStat->TempData                    = get_ds18b20_temperature();
         pBoardStat->Voltage                     = get_adc_voltage();
@@ -34,15 +36,16 @@ void register_xfer(char *pskb)
         struct RegisterControl *pregs   = (struct RegisterControl *)pskb;
         
         /*填充消息*/
-        pregs->RegsMsg.MsgId            = ARM_PC_RegisterControl_Rsp;
+        pregs->RegsMsg.MsgId            = ARM_PC_REGISTER_RW_RSP;
+        pregs->RegsMsg.MsgLen           = sizeof(*pregs)
+                                            - sizeof(pregs->RegsMsg);
         
         buf[0] = pregs->Addr;
         buf[1] = pregs->Data;
-        printf("addr = %#x data = %#x flag = %d\n", buf[0], buf[1], pregs->flag);
         if(pregs->flag == READ)
-                ioctl(regeditorfd, REGEDITOR_READ, buf);
+                pregs->Result = ioctl(regeditorfd, REGEDITOR_READ, buf);
         else
-                ioctl(regeditorfd, REGEDITOR_WRITE, buf);
+                pregs->Result = ioctl(regeditorfd, REGEDITOR_WRITE, buf);
 }
 
 /* 功能：软件更新
@@ -51,30 +54,13 @@ void register_xfer(char *pskb)
  * */
 void sw_update(char *pskb)
 {
-        struct SoftWareUpdate *psoftwareupdate = (struct SoftWareUpdate *)pskb;
-
-}
-
-/* 功能：获取温度
- * 参数：同上
- * 返回值：无
- * */
-void get_temperature(char *pskb)
-{
-        struct  GetTempData *pgettempdata = (struct GetTempData *)pskb;
-
-        pgettempdata->TempData = get_ds18b20_temperature(); 
-}
-
-/* 功能：获取电压
- * 参数：同上
- * 返回值：无
- * */
-void get_voltage(char *pskb)
-{
-        struct GetVoltageData *pgetvoltagedata = (struct GetVoltageData *)pskb;
-
-        pgetvoltagedata->VoltageData = get_adc_voltage();
+        struct SoftWareUpdate *psoftwareupdate      = (struct SoftWareUpdate *)pskb;
+    
+        /* 消息处理*/
+        psoftwareupdate->SoftWareUpdateMsg.MsgId    = ARM_PC_SOFTWARE_UPDATE_RSP;
+        psoftwareupdate->SoftWareUpdateMsg.MsgLen   = sizeof(*psoftwareupdate)
+                                                        - sizeof(psoftwareupdate->SoftWareUpdateMsg);
+        
 }
 
 /* 功能：操作EEPROM
@@ -102,9 +88,15 @@ void eeprom_xfer(char *pskb)
  * */
 void send_gprs_message_req(char *pskb)
 {
-        struct GprsMessage *pgprsmessage = (struct GprsMessage *)pskb;
+        struct GprsMessage *pgprsmessage    = (struct GprsMessage *)pskb;
 
-        pgprsmessage->SendResult = send_gprs_message(pgprsmessage->TelephoneNumber, pgprsmessage->Message);
+        /* 构造消息*/
+        pgprsmessage->GprsMessageMsg.MsgId  = ARM_PC_SEND_GPRS_MESSAGE_RSP;
+        pgprsmessage->GprsMessageMsg.MsgLen = sizeof(*pgprsmessage)
+                                                - sizeof(pgprsmessage->GprsMessageMsg);
+
+        pgprsmessage->Result = send_gprs_message(pgprsmessage->TelephoneNumber, 
+                                                        pgprsmessage->Message);
 }
 
 /* 功能：上位机发送zigbee信息
@@ -113,9 +105,14 @@ void send_gprs_message_req(char *pskb)
  * */
 void send_zigbee_message_req(char *pskb)
 {
-        struct ZigbeeMessage *pZigbeeMessage = (struct ZigbeeMessage*)pskb;
+        struct ZigbeeMessage *pZigbeeMessage    = (struct ZigbeeMessage*)pskb;
 
-        pZigbeeMessage->SendResult = send_zigbee_message(pZigbeeMessage->Message);
+        /* 消息处理*/
+        pZigbeeMessage->ZigbeeMessageMsg.MsgId  = ARM_PC_SEND_ZIGBEE_MESSAGE_RSP;
+        pZigbeeMessage->ZigbeeMessageMsg.MsgLen = sizeof(*pZigbeeMessage)
+                                                    - sizeof(pZigbeeMessage->ZigbeeMessageMsg);
+
+        pZigbeeMessage->Result = send_zigbee_message(pZigbeeMessage->Message);
 }
 
 /* 功能:报警器控制
@@ -124,12 +121,16 @@ void send_zigbee_message_req(char *pskb)
  * */
 void beep_control_req(char *pskb)
 {
-        struct BeepControl *pBeep = (struct BeepControl*)pskb;
+        struct BeepControl *pBeep       = (struct BeepControl*)pskb;
         
+        /* 消息处理*/
+        pBeep->BeepControlMsg.MsgId     = ARM_PC_BEEP_CONTROL_RSP;
+        pBeep->BeepControlMsg.MsgLen    = sizeof(*pBeep)
+                                            - sizeof(pBeep->BeepControlMsg);
         if(pBeep->Flag == 1) { //打开
-                pBeep->SendResult = start_alarm();
+                pBeep->Result = start_alarm();
         } else {        //关闭
-                pBeep->SendResult = stop_alarm(); 
+                pBeep->Result = stop_alarm(); 
         }
 }
 
@@ -139,12 +140,17 @@ void beep_control_req(char *pskb)
  * */
 void led_control_req(char *pskb)
 {
-        struct LedControl *pLed = (struct LedControl *)pskb;
+        struct LedControl *pLed     = (struct LedControl *)pskb;
+
+        /* 消息处理*/
+        pLed->LedControlMsg.MsgId   = ARM_PC_LEDS_CONTROL_RSP;
+        pLed->LedControlMsg.MsgLen  = sizeof(*pLed)
+                                        - sizeof(pLed->LedControlMsg);
 
         if (pLed->Flag == 1) {
-                pLed->SendResult = start_led(pLed->FlashTime);
+                pLed->Result = start_led(pLed->FlashTime);
         } else {
-                pLed->SendResult = stop_led();
+                pLed->Result = stop_led();
         }
 }
 

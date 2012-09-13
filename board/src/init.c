@@ -130,7 +130,7 @@ int gprs_config(void)
 }
 
 /* 功能：发送短信息内容
- * 返回值：1:失败；0：成功
+ * 返回值：-1:失败；0：成功
  * 参数1：手机号码
  * 参数2：短信息内容
  * */
@@ -158,6 +158,8 @@ int send_gprs_message(char *telephone, char *msg)
     msg_buf[len+2] = '\0';
     
     write(gprsfd, msg_buf, strlen(msg_buf));
+
+    return 0;
 }
 
 /* 功能：打开报警器
