@@ -1,0 +1,16 @@
+prefix=/home/tarena/workdir/build-qt
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include/QtWebKit
+qt_config=lex yacc uic resources qt release incremental link_prl no_mocdepend release stl qt_no_framework cross_compile release shared dll embedded largefile stl precompile_header exceptions_off dylib create_prl link_prl depend_includepath QTDIR_build building-libs depend_includepath embedded qt_install_headers qt depend_includepath qmake_cache target_qt hide_symbols create_libtool create_pc explicitlib link_pkgconfig no_debug_info moc thread shared dll
+moc_location=/home/tarena/workdir/build-qt/bin/moc
+uic_location=/home/tarena/workdir/build-qt/bin/uic
+
+Name: Qtwebkit
+Description: Qtwebkit Library
+Version: 4.5.2
+Libs: -L${libdir} -lQtWebKit 
+Libs.private: -L/home/tarena/workdir/tslib/lib -L/home/tarena/workdir/build-qt/lib  -lQtGui -L/home/tarena/workdir/tslib/lib -L/home/tarena/workdir/build-qt/lib -lts -lQtNetwork -lQtCore -lm -lrt -lpthread -ldl  
+Cflags: -DQT_SHARED -I/home/tarena/workdir/build-qt/include -I${includedir}
+Requires: QtCore QtDBus QtGui QtNetwork QtXml
+

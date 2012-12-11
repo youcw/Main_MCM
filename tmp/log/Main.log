@@ -1,0 +1,6 @@
+make[1]: Entering directory `/home/tarena/workdir/project/gprs_security/board/src/Main'
+rm Main
+make[1]: Leaving directory `/home/tarena/workdir/project/gprs_security/board/src/Main'
+make[1]: Entering directory `/home/tarena/workdir/project/gprs_security/board/src/Main'
+arm-linux-gcc main.c log.c systeminfo.c thread.c socket.c socket_dev.c init.c serial.c  -lpthread -o Main -I ../../include
+make[1]: Leaving directory `/home/tarena/workdir/project/gprs_security/board/src/Main'

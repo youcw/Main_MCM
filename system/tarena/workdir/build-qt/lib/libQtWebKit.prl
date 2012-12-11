@@ -1,0 +1,7 @@
+QMAKE_PRL_BUILD_DIR = /home/tarena/workdir/qtopia/qt-embedded-linux-opensource-src-4.5.2/src/3rdparty/webkit/WebCore
+QMAKE_PRO_INPUT = WebCore.pro
+QMAKE_PRL_TARGET = libQtWebKit.so.4.5.2
+QMAKE_PRL_DEFINES = QT_SHARED
+QMAKE_PRL_CONFIG = lex yacc uic resources qt release incremental link_prl no_mocdepend release stl qt_no_framework cross_compile release shared dll embedded largefile stl precompile_header exceptions_off dylib create_prl link_prl depend_includepath QTDIR_build building-libs depend_includepath embedded qt_install_headers qt depend_includepath qmake_cache target_qt hide_symbols create_libtool create_pc explicitlib link_pkgconfig no_debug_info moc thread shared dll
+QMAKE_PRL_VERSION = 4.5.2
+QMAKE_PRL_LIBS = -L/home/tarena/workdir/tslib/lib -L/home/tarena/workdir/build-qt/lib  -lQtGui -L/home/tarena/workdir/tslib/lib -L/home/tarena/workdir/build-qt/lib -lts -lQtNetwork -lQtCore -lm -lrt -lpthread -ldl 

@@ -1,0 +1,22 @@
+#tslib setting
+export QTDIR=/home/tarena/workdir/build-qt
+export TSLIBDIR=/home/tarena/workdir/tslib
+
+echo "tslib setting"
+export V_ROOT=/home/tarena/workdir/tslib
+export TSLIB_CONSOLEDEVICE=none
+export TSLIB_FBDEVICE=/dev/fb0
+export TSLIB_TSDEVICE=/dev/event1
+export TSLIB_CALIBFILE=none
+export TSLIB_CONFFILE=$V_ROOT/etc/ts.conf
+export TSLIB_PLUGINDIR=$V_ROOT/lib/ts
+
+#qt-embedded-4 setting
+echo "qt-embedded-4 setting"
+export QWS_SIZE=800x480
+export QWS_DISPLAY="LinuxFB:mmWidth:95:0"
+export QT_QWS_FONTDIR=$QTDIR/lib/fonts
+export QWS_MOUSE_PROTO=Tslib:/dev/event0
+export LD_LIBRARY_PATH=$QTDIR/lib:$TSLIBDIR/lib:$LD_LIBRARY_PATH
+
+/home/app/server -qws &

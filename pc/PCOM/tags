@@ -1,0 +1,427 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AR	Makefile	/^AR            = ar cqs$/;"	m
+BUF_SIZE	msg.h	77;"	d
+BeepButton	ui_mainwindow.h	/^    QPushButton *BeepButton;$/;"	m	class:Ui_MainWindow
+BeepCloseCheckBox	ui_mainwindow.h	/^    QCheckBox *BeepCloseCheckBox;$/;"	m	class:Ui_MainWindow
+BeepOpenCheckBox	ui_mainwindow.h	/^    QCheckBox *BeepOpenCheckBox;$/;"	m	class:Ui_MainWindow
+BeepSettingButton	ui_mainwindow.h	/^    QPushButton *BeepSettingButton;$/;"	m	class:Ui_MainWindow
+BeepSettingFunction	message.cpp	/^void MainWindow::BeepSettingFunction(void)$/;"	f	class:MainWindow
+CC	Makefile	/^CC            = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS        = -m32 -pipe -O2 -Wall -W -D_REENTRANT $(DEFINES)$/;"	m
+CHK_DIR_EXISTS	Makefile	/^CHK_DIR_EXISTS= test -d$/;"	m
+COMPRESS	Makefile	/^COMPRESS      = gzip -9f$/;"	m
+COPY	Makefile	/^COPY          = cp -f$/;"	m
+COPY_DIR	Makefile	/^COPY_DIR      = $(COPY) -r$/;"	m
+COPY_FILE	Makefile	/^COPY_FILE     = $(COPY)$/;"	m
+CXX	Makefile	/^CXX           = g++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS      = -m32 -pipe -O2 -Wall -W -D_REENTRANT $(DEFINES)$/;"	m
+CheckMachineStatFunction	message.cpp	/^void MainWindow::CheckMachineStatFunction(void)$/;"	f	class:MainWindow
+CpuFreqButton	ui_mainwindow.h	/^    QPushButton *CpuFreqButton;$/;"	m	class:Ui_MainWindow
+CpuFreqLineEdit	ui_mainwindow.h	/^    QLineEdit *CpuFreqLineEdit;$/;"	m	class:Ui_MainWindow
+CurrentTemperatureButton	ui_mainwindow.h	/^    QPushButton *CurrentTemperatureButton;$/;"	m	class:Ui_MainWindow
+CurrentTimeLabel	ui_mainwindow.h	/^    QLabel *CurrentTimeLabel;$/;"	m	class:Ui_MainWindow
+CurrentVoltageButton	ui_mainwindow.h	/^    QPushButton *CurrentVoltageButton;$/;"	m	class:Ui_MainWindow
+CurrentVoltageLineEdit	ui_mainwindow.h	/^    QLineEdit *CurrentVoltageLineEdit;$/;"	m	class:Ui_MainWindow
+CurrnetTemperatureLineEdit	ui_mainwindow.h	/^    QLineEdit *CurrnetTemperatureLineEdit;$/;"	m	class:Ui_MainWindow
+DEFINES	Makefile	/^DEFINES       = -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED$/;"	m
+DEL_DIR	Makefile	/^DEL_DIR       = rmdir$/;"	m
+DEL_FILE	Makefile	/^DEL_FILE      = rm -f$/;"	m
+DESTDIR	Makefile	/^DESTDIR       = $/;"	m
+DIST	Makefile	/^DIST          = \/usr\/share\/qt4\/mkspecs\/common\/unix.conf \\$/;"	m
+DeviceStatButton	ui_mainwindow.h	/^    QPushButton *DeviceStatButton;$/;"	m	class:Ui_MainWindow
+EepromAddrButton	ui_mainwindow.h	/^    QPushButton *EepromAddrButton;$/;"	m	class:Ui_MainWindow
+EepromAddrLineEdit	ui_mainwindow.h	/^    QLineEdit *EepromAddrLineEdit;$/;"	m	class:Ui_MainWindow
+EepromButton	ui_mainwindow.h	/^    QPushButton *EepromButton;$/;"	m	class:Ui_MainWindow
+EepromDataButton	ui_mainwindow.h	/^    QPushButton *EepromDataButton;$/;"	m	class:Ui_MainWindow
+EepromDataLineEdit	ui_mainwindow.h	/^    QLineEdit *EepromDataLineEdit;$/;"	m	class:Ui_MainWindow
+EepromReadCheckBox	ui_mainwindow.h	/^    QCheckBox *EepromReadCheckBox;$/;"	m	class:Ui_MainWindow
+EepromSettingButton	ui_mainwindow.h	/^    QPushButton *EepromSettingButton;$/;"	m	class:Ui_MainWindow
+EepromSettingFunction	message.cpp	/^void MainWindow::EepromSettingFunction(void)$/;"	f	class:MainWindow
+EepromWriteCheckBox	ui_mainwindow.h	/^    QCheckBox *EepromWriteCheckBox;$/;"	m	class:Ui_MainWindow
+File	mainwindow.h	/^    QFile       *File;$/;"	m	class:MainWindow
+FileDialog	mainwindow.h	/^    QFileDialog *FileDialog;$/;"	m	class:MainWindow
+FileInfo	mainwindow.h	/^    QFileInfo   *FileInfo;$/;"	m	class:MainWindow
+FreeDiskSpaceButton	ui_mainwindow.h	/^    QPushButton *FreeDiskSpaceButton;$/;"	m	class:Ui_MainWindow
+FreeDiskSpaceLineEdit	ui_mainwindow.h	/^    QLineEdit *FreeDiskSpaceLineEdit;$/;"	m	class:Ui_MainWindow
+FreeMemButton	ui_mainwindow.h	/^    QPushButton *FreeMemButton;$/;"	m	class:Ui_MainWindow
+FreeMemLineEdit	ui_mainwindow.h	/^    QLineEdit *FreeMemLineEdit;$/;"	m	class:Ui_MainWindow
+HardWareTestSelf	ui_mainwindow.h	/^    QPushButton *HardWareTestSelf;$/;"	m	class:Ui_MainWindow
+HardWareTestSelfCheckButton	ui_mainwindow.h	/^    QPushButton *HardWareTestSelfCheckButton;$/;"	m	class:Ui_MainWindow
+HardWareTestSelfFunction	message.cpp	/^void MainWindow::HardWareTestSelfFunction(void)$/;"	f	class:MainWindow
+HardWareTestSelfLineEdit	ui_mainwindow.h	/^    QLineEdit *HardWareTestSelfLineEdit;$/;"	m	class:Ui_MainWindow
+INCPATH	Makefile	/^INCPATH       = -I\/usr\/share\/qt4\/mkspecs\/linux-g++-32 -I. -I\/usr\/include\/qt4\/QtCore -I\/usr\/include\/qt4\/QtGui -I\/usr\/include\/qt4 -I. -I. -I.$/;"	m
+INSTALL_DIR	Makefile	/^INSTALL_DIR   = $(COPY_DIR)$/;"	m
+INSTALL_FILE	Makefile	/^INSTALL_FILE  = install -m 644 -p$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = install -m 755 -p$/;"	m
+IpBuf	mainwindow.h	/^    char IpBuf[20];$/;"	m	class:MainWindow
+LFLAGS	Makefile	/^LFLAGS        = -m32 -Wl,-O1$/;"	m
+LIBS	Makefile	/^LIBS          = $(SUBLIBS)  -L\/usr\/lib\/i386-linux-gnu -lQtGui -lQtCore -lpthread $/;"	m
+LINK	Makefile	/^LINK          = g++$/;"	m
+LOGDIALOG_H	logdialog.h	2;"	d
+LedButton	ui_mainwindow.h	/^    QPushButton *LedButton;$/;"	m	class:Ui_MainWindow
+LedCloseCheckBox	ui_mainwindow.h	/^    QCheckBox *LedCloseCheckBox;$/;"	m	class:Ui_MainWindow
+LedFlashTimeButton	ui_mainwindow.h	/^    QPushButton *LedFlashTimeButton;$/;"	m	class:Ui_MainWindow
+LedFlashTimeLineEdit	ui_mainwindow.h	/^    QLineEdit *LedFlashTimeLineEdit;$/;"	m	class:Ui_MainWindow
+LedOpenCheckBox	ui_mainwindow.h	/^    QCheckBox *LedOpenCheckBox;$/;"	m	class:Ui_MainWindow
+LedSettingButton	ui_mainwindow.h	/^    QPushButton *LedSettingButton;$/;"	m	class:Ui_MainWindow
+LedSettingFunction	message.cpp	/^void MainWindow::LedSettingFunction(void)$/;"	f	class:MainWindow
+LogDialog	logdialog.cpp	/^LogDialog::LogDialog(QWidget *parent) :$/;"	f	class:LogDialog
+LogDialog	logdialog.h	/^class LogDialog : public QDialog$/;"	c
+LogDialog	ui_logdialog.h	/^    class LogDialog: public Ui_LogDialog {};$/;"	c	namespace:Ui
+LoginWindow	logdialog.cpp	/^void LogDialog::LoginWindow(void)$/;"	f	class:LogDialog
+MAINWINDOW_H	mainwindow.h	2;"	d
+MKDIR	Makefile	/^MKDIR         = mkdir -p$/;"	m
+MOVE	Makefile	/^MOVE          = mv -f$/;"	m
+MSG_H	msg.h	2;"	d
+MainWindow	mainwindow.cpp	/^MainWindow::MainWindow(QWidget *parent) :$/;"	f	class:MainWindow
+MainWindow	mainwindow.h	/^class MainWindow : public QMainWindow$/;"	c
+MainWindow	ui_mainwindow.h	/^    class MainWindow: public Ui_MainWindow {};$/;"	c	namespace:Ui
+MessageButton	ui_mainwindow.h	/^    QPushButton *MessageButton;$/;"	m	class:Ui_MainWindow
+MessageLineEdit	ui_mainwindow.h	/^    QLineEdit *MessageLineEdit;$/;"	m	class:Ui_MainWindow
+NETDIALOG_H	netdialog.h	2;"	d
+NetDialog	netdialog.cpp	/^NetDialog::NetDialog(QWidget *parent) :$/;"	f	class:NetDialog
+NetDialog	netdialog.h	/^class NetDialog : public QDialog$/;"	c
+NetDialog	ui_netdialog.h	/^    class NetDialog: public Ui_NetDialog {};$/;"	c	namespace:Ui
+NetShowLogin	moc_netdialog.cpp	/^void NetDialog::NetShowLogin()$/;"	f	class:NetDialog
+OBJECTS	Makefile	/^OBJECTS       = main.o \\$/;"	m
+OBJECTS_DIR	Makefile	/^OBJECTS_DIR   = .\/$/;"	m
+O_MAINMCM_BEEP_RSP	msg.h	45;"	d
+O_MAINMCM_GET_EEPROM_DATA_RSP	msg.h	41;"	d
+O_MAINMCM_GET_REGISTER_DATA_RSP	msg.h	39;"	d
+O_MAINMCM_HARDWARE_SELFTEST_RSP	msg.h	47;"	d
+O_MAINMCM_LED_RSP	msg.h	46;"	d
+O_MAINMCM_MACHINE_INFO_QUERY_RSP	msg.h	37;"	d
+O_MAINMCM_MODEM_RSP	msg.h	43;"	d
+O_MAINMCM_SET_EEPROM_DATA_RSP	msg.h	40;"	d
+O_MAINMCM_SET_REGISTER_DATA_RSP	msg.h	38;"	d
+O_MAINMCM_SOFTWARE_UPDATE_RSP	msg.h	42;"	d
+O_MAINMCM_TOD_ADJUST_RSP	msg.h	48;"	d
+O_MAINMCM_VERSION_QUERY_RSP	msg.h	49;"	d
+O_MAINMCM_ZIGBEE_RSP	msg.h	44;"	d
+O_MAINWEB_BEEP_RSP	msg.h	55;"	d
+O_MAINWEB_GET_PIC_QUERY_RSP	msg.h	53;"	d
+O_MAINWEB_GET_TEMP_QUERY_RSP	msg.h	52;"	d
+O_MAINWEB_GET_VIDEO_QUERY_RSP	msg.h	54;"	d
+O_MAINWEB_INFRARED_RSP	msg.h	57;"	d
+O_MAINWEB_WATERHEATER_RSP	msg.h	56;"	d
+O_MCMMAIN_BEEP_REQ	msg.h	30;"	d
+O_MCMMAIN_GET_EEPROM_DATA_REQ	msg.h	26;"	d
+O_MCMMAIN_GET_REGISTER_DATA_REQ	msg.h	24;"	d
+O_MCMMAIN_HARDWARE_SELFTEST_REQ	msg.h	32;"	d
+O_MCMMAIN_LED_REQ	msg.h	31;"	d
+O_MCMMAIN_MACHINE_INFO_QUERY_REQ	msg.h	22;"	d
+O_MCMMAIN_MODEM_REQ	msg.h	28;"	d
+O_MCMMAIN_SET_EEPROM_DATA_REQ	msg.h	25;"	d
+O_MCMMAIN_SET_REGISTER_DATA_REQ	msg.h	23;"	d
+O_MCMMAIN_SOFTWARE_UPDATE_REQ	msg.h	27;"	d
+O_MCMMAIN_TOD_ADJUST_REQ	msg.h	33;"	d
+O_MCMMAIN_VERSION_QUERY_REQ	msg.h	34;"	d
+O_MCMMAIN_ZIGBEE_REQ	msg.h	29;"	d
+O_WEBMAIN_BEEP_REQ	msg.h	63;"	d
+O_WEBMAIN_GET_PIC_QUERY_REQ	msg.h	61;"	d
+O_WEBMAIN_GET_TEMP_QUERY_REQ	msg.h	60;"	d
+O_WEBMAIN_GET_VIDEO_QUERY_REQ	msg.h	62;"	d
+O_WEBMAIN_INFRARED_REQ	msg.h	65;"	d
+O_WEBMAIN_WATERHEATER_REQ	msg.h	64;"	d
+QMAKE	Makefile	/^QMAKE         = \/usr\/bin\/qmake-qt4$/;"	m
+QMAKE_TARGET	Makefile	/^QMAKE_TARGET  = PCOM$/;"	m
+RANLIB	Makefile	/^RANLIB        = $/;"	m
+READ	msg.h	11;"	d
+RegisterAddrButton	ui_mainwindow.h	/^    QPushButton *RegisterAddrButton;$/;"	m	class:Ui_MainWindow
+RegisterAddrLineEdit	ui_mainwindow.h	/^    QLineEdit *RegisterAddrLineEdit;$/;"	m	class:Ui_MainWindow
+RegisterButton	ui_mainwindow.h	/^    QPushButton *RegisterButton;$/;"	m	class:Ui_MainWindow
+RegisterDataButton	ui_mainwindow.h	/^    QPushButton *RegisterDataButton;$/;"	m	class:Ui_MainWindow
+RegisterDataLineEdit	ui_mainwindow.h	/^    QLineEdit *RegisterDataLineEdit;$/;"	m	class:Ui_MainWindow
+RegisterReadCheckBox	ui_mainwindow.h	/^    QCheckBox *RegisterReadCheckBox;$/;"	m	class:Ui_MainWindow
+RegisterSettingButton	ui_mainwindow.h	/^    QPushButton *RegisterSettingButton;$/;"	m	class:Ui_MainWindow
+RegisterSettingFunction	message.cpp	/^void MainWindow::RegisterSettingFunction(void)$/;"	f	class:MainWindow
+RegisterWriteCheckBox	ui_mainwindow.h	/^    QCheckBox *RegisterWriteCheckBox;$/;"	m	class:Ui_MainWindow
+SED	Makefile	/^SED           = sed$/;"	m
+SOURCES	Makefile	/^SOURCES       = main.cpp \\$/;"	m
+STRIP	Makefile	/^STRIP         = strip$/;"	m
+STRU_MSG_HEAD	msg.h	/^}STRU_MSG_HEAD;$/;"	t	typeref:struct:__anon1
+STRU_TIME_INFO	msg.h	/^}STRU_TIME_INFO;$/;"	t	typeref:struct:__anon2
+SYMLINK	Makefile	/^SYMLINK       = ln -f -s$/;"	m
+SYS_ERROR	msg.h	15;"	d
+SYS_OK	msg.h	14;"	d
+SendGprsMessageButton	ui_mainwindow.h	/^    QPushButton *SendGprsMessageButton;$/;"	m	class:Ui_MainWindow
+SendGprsMessageFunction	message.cpp	/^void MainWindow::SendGprsMessageFunction(void)$/;"	f	class:MainWindow
+SendMessageButton	ui_mainwindow.h	/^    QPushButton *SendMessageButton;$/;"	m	class:Ui_MainWindow
+SendZigbeeMessageButton	ui_mainwindow.h	/^    QPushButton *SendZigbeeMessageButton;$/;"	m	class:Ui_MainWindow
+SendZigbeeMessageFunction	message.cpp	/^void MainWindow::SendZigbeeMessageFunction(void)$/;"	f	class:MainWindow
+SoftWareUpdateButton	ui_mainwindow.h	/^    QPushButton *SoftWareUpdateButton;$/;"	m	class:Ui_MainWindow
+SoftWareUpdateFunction	message.cpp	/^void MainWindow::SoftWareUpdateFunction(void)$/;"	f	class:MainWindow
+StatButton	ui_mainwindow.h	/^    QPushButton *StatButton;$/;"	m	class:Ui_MainWindow
+TAR	Makefile	/^TAR           = tar -cf$/;"	m
+TARGET	Makefile	/^TARGET        = PCOM$/;"	m
+TRANSFER_NET	msg.h	17;"	d
+TRANSFER_UART	msg.h	18;"	d
+TelephoneNumberButton	ui_mainwindow.h	/^    QPushButton *TelephoneNumberButton;$/;"	m	class:Ui_MainWindow
+TelephoneNumberLineEdit	ui_mainwindow.h	/^    QLineEdit *TelephoneNumberLineEdit;$/;"	m	class:Ui_MainWindow
+TimeAdjustButton	ui_mainwindow.h	/^    QPushButton *TimeAdjustButton;$/;"	m	class:Ui_MainWindow
+TimeAdjustFunction	message.cpp	/^void MainWindow::TimeAdjustFunction(void)$/;"	f	class:MainWindow
+TimeSettingButton	ui_mainwindow.h	/^    QPushButton *TimeSettingButton;$/;"	m	class:Ui_MainWindow
+TransFlag	mainwindow.h	/^    int TransFlag;  \/* 0: net; 1:uart*\/$/;"	m	class:MainWindow
+UARTDIALOG_H	uartdialog.h	2;"	d
+UI_LOGDIALOG_H	ui_logdialog.h	11;"	d
+UI_MAINWINDOW_H	ui_mainwindow.h	11;"	d
+UI_NETDIALOG_H	ui_netdialog.h	11;"	d
+UI_UARTDIALOG_H	ui_uartdialog.h	11;"	d
+UartBuf	mainwindow.h	/^    char UartBuf[20];$/;"	m	class:MainWindow
+UartDialog	uartdialog.cpp	/^UartDialog::UartDialog(QWidget *parent) :$/;"	f	class:UartDialog
+UartDialog	uartdialog.h	/^class UartDialog : public QDialog$/;"	c
+UartDialog	ui_uartdialog.h	/^    class UartDialog: public Ui_UartDialog {};$/;"	c	namespace:Ui
+UartShowLogin	moc_uartdialog.cpp	/^void UartDialog::UartShowLogin()$/;"	f	class:UartDialog
+Ui	logdialog.h	/^namespace Ui {$/;"	n
+Ui	mainwindow.h	/^namespace Ui {$/;"	n
+Ui	netdialog.h	/^namespace Ui {$/;"	n
+Ui	uartdialog.h	/^namespace Ui {$/;"	n
+Ui	ui_logdialog.h	/^namespace Ui {$/;"	n
+Ui	ui_mainwindow.h	/^namespace Ui {$/;"	n
+Ui	ui_netdialog.h	/^namespace Ui {$/;"	n
+Ui	ui_uartdialog.h	/^namespace Ui {$/;"	n
+Ui_LogDialog	ui_logdialog.h	/^class Ui_LogDialog$/;"	c
+Ui_MainWindow	ui_mainwindow.h	/^class Ui_MainWindow$/;"	c
+Ui_NetDialog	ui_netdialog.h	/^class Ui_NetDialog$/;"	c
+Ui_UartDialog	ui_uartdialog.h	/^class Ui_UartDialog$/;"	c
+UpdateWallTimeFunction	message.cpp	/^void MainWindow::UpdateWallTimeFunction(void)$/;"	f	class:MainWindow
+WRITE	msg.h	12;"	d
+ZigbeeButton	ui_mainwindow.h	/^    QPushButton *ZigbeeButton;$/;"	m	class:Ui_MainWindow
+ZigbeeMessageButton	ui_mainwindow.h	/^    QPushButton *ZigbeeMessageButton;$/;"	m	class:Ui_MainWindow
+ZigbeeMessageLineEdit	ui_mainwindow.h	/^    QLineEdit *ZigbeeMessageLineEdit;$/;"	m	class:Ui_MainWindow
+bSuccessful	msg.h	/^    u8              bSuccessful;$/;"	m	struct:stru_beep_control_rsp
+bSuccessful	msg.h	/^    u8              bSuccessful;$/;"	m	struct:stru_led_control_rsp
+bSuccessful	msg.h	/^    u8              bSuccessful;$/;"	m	struct:stru_send_gprs_message_rsp
+bSuccessful	msg.h	/^    u8              bSuccessful;$/;"	m	struct:stru_send_zigbee_message_rsp
+bSuccessful	msg.h	/^    u8              bSuccessful;$/;"	m	struct:stru_set_eeprom_data_rsp
+bSuccessful	msg.h	/^    u8              bSuccessful;$/;"	m	struct:stru_set_register_data_rsp
+bSuccessful	msg.h	/^    u8              bSuccessful;$/;"	m	struct:stru_software_update_rsp
+bSuccessful	msg.h	/^    u8              bSuccessful;$/;"	m	struct:stru_tod_adjust_rsp
+buf	mainwindow.h	/^    char buf[BUF_SIZE];$/;"	m	class:MainWindow
+centralWidget	ui_mainwindow.h	/^    QWidget *centralWidget;$/;"	m	class:Ui_MainWindow
+client_addr	mainwindow.h	/^    struct sockaddr_in client_addr;$/;"	m	class:MainWindow	typeref:struct:MainWindow::sockaddr_in
+client_sockfd	mainwindow.h	/^    int client_sockfd;$/;"	m	class:MainWindow
+dateTimeEdit	ui_mainwindow.h	/^    QDateTimeEdit *dateTimeEdit;$/;"	m	class:Ui_MainWindow
+f32	msg.h	/^typedef float               f32;$/;"	t
+f32CpuFreq	msg.h	/^    f32             f32CpuFreq;$/;"	m	struct:stru_machine_info_rsp
+f32Temp	msg.h	/^    f32             f32Temp;$/;"	m	struct:stru_machine_info_rsp
+f32Vol	msg.h	/^    f32             f32Vol;$/;"	m	struct:stru_machine_info_rsp
+getStaticMetaObject	moc_logdialog.cpp	/^const QMetaObject &LogDialog::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:LogDialog
+getStaticMetaObject	moc_mainwindow.cpp	/^const QMetaObject &MainWindow::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:MainWindow
+getStaticMetaObject	moc_netdialog.cpp	/^const QMetaObject &NetDialog::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:NetDialog
+getStaticMetaObject	moc_uartdialog.cpp	/^const QMetaObject &UartDialog::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:UartDialog
+init	mainwindow.cpp	/^void MainWindow::init()$/;"	f	class:MainWindow
+init_device	init.cpp	/^int init_device(int *fd,char *buf)$/;"	f
+init_serial	init.cpp	/^void init_serial(int *fd)$/;"	f
+init_uart	message.cpp	/^void MainWindow::init_uart(void)$/;"	f	class:MainWindow
+label	ui_netdialog.h	/^    QLabel *label;$/;"	m	class:Ui_NetDialog
+label	ui_uartdialog.h	/^    QLabel *label;$/;"	m	class:Ui_UartDialog
+label_2	ui_netdialog.h	/^    QLabel *label_2;$/;"	m	class:Ui_NetDialog
+label_2	ui_uartdialog.h	/^    QLabel *label_2;$/;"	m	class:Ui_UartDialog
+len	mainwindow.h	/^    int len;$/;"	m	class:MainWindow
+line	ui_mainwindow.h	/^    QFrame *line;$/;"	m	class:Ui_MainWindow
+line_2	ui_mainwindow.h	/^    QFrame *line_2;$/;"	m	class:Ui_MainWindow
+line_3	ui_mainwindow.h	/^    QFrame *line_3;$/;"	m	class:Ui_MainWindow
+loglabel	ui_logdialog.h	/^    QLabel *loglabel;$/;"	m	class:Ui_LogDialog
+m	netdialog.h	/^    MainWindow *m;$/;"	m	class:NetDialog
+m	uartdialog.h	/^    MainWindow *m;$/;"	m	class:UartDialog
+main	main.cpp	/^int main(int argc, char *argv[])$/;"	f
+mainToolBar	ui_mainwindow.h	/^    QToolBar *mainToolBar;$/;"	m	class:Ui_MainWindow
+menu	ui_mainwindow.h	/^    QLabel *menu;$/;"	m	class:Ui_MainWindow
+menuBar	ui_mainwindow.h	/^    QMenuBar *menuBar;$/;"	m	class:Ui_MainWindow
+metaObject	moc_logdialog.cpp	/^const QMetaObject *LogDialog::metaObject() const$/;"	f	class:LogDialog
+metaObject	moc_mainwindow.cpp	/^const QMetaObject *MainWindow::metaObject() const$/;"	f	class:MainWindow
+metaObject	moc_netdialog.cpp	/^const QMetaObject *NetDialog::metaObject() const$/;"	f	class:NetDialog
+metaObject	moc_uartdialog.cpp	/^const QMetaObject *UartDialog::metaObject() const$/;"	f	class:UartDialog
+n	logdialog.h	/^    NetDialog *n;$/;"	m	class:LogDialog
+n	ui_netdialog.h	/^    QPushButton *n;$/;"	m	class:Ui_NetDialog
+name_arr	init.cpp	/^int name_arr[] = {115200, 38400,  19200,  9600,  4800,  2400,  1200,  300,$/;"	v
+netbutton	ui_logdialog.h	/^    QPushButton *netbutton;$/;"	m	class:Ui_LogDialog
+netexitbutton	ui_netdialog.h	/^    QPushButton *netexitbutton;$/;"	m	class:Ui_NetDialog
+netlineEdit	ui_netdialog.h	/^    QLineEdit *netlineEdit;$/;"	m	class:Ui_NetDialog
+netlogbutton	ui_netdialog.h	/^    QPushButton *netlogbutton;$/;"	m	class:Ui_NetDialog
+ok	mainwindow.h	/^    bool ok;$/;"	m	class:MainWindow
+on_netbutton_clicked	logdialog.cpp	/^void LogDialog::on_netbutton_clicked()$/;"	f	class:LogDialog
+on_netexitbutton_clicked	netdialog.cpp	/^void NetDialog::on_netexitbutton_clicked()$/;"	f	class:NetDialog
+on_netlogbutton_clicked	netdialog.cpp	/^void NetDialog::on_netlogbutton_clicked()$/;"	f	class:NetDialog
+on_uartbutton_clicked	logdialog.cpp	/^void LogDialog::on_uartbutton_clicked()$/;"	f	class:LogDialog
+on_uartlogbutton_clicked	uartdialog.cpp	/^void UartDialog::on_uartlogbutton_clicked()$/;"	f	class:UartDialog
+on_uartreturnbutton_clicked	uartdialog.cpp	/^void UartDialog::on_uartreturnbutton_clicked()$/;"	f	class:UartDialog
+processdlg	mainwindow.h	/^    QProgressDialog    *processdlg;$/;"	m	class:MainWindow
+pushButton	ui_uartdialog.h	/^    QPushButton *pushButton;$/;"	m	class:Ui_UartDialog
+qt_meta_data_LogDialog	moc_logdialog.cpp	/^static const uint qt_meta_data_LogDialog[] = {$/;"	v	file:
+qt_meta_data_MainWindow	moc_mainwindow.cpp	/^static const uint qt_meta_data_MainWindow[] = {$/;"	v	file:
+qt_meta_data_NetDialog	moc_netdialog.cpp	/^static const uint qt_meta_data_NetDialog[] = {$/;"	v	file:
+qt_meta_data_UartDialog	moc_uartdialog.cpp	/^static const uint qt_meta_data_UartDialog[] = {$/;"	v	file:
+qt_meta_stringdata_LogDialog	moc_logdialog.cpp	/^static const char qt_meta_stringdata_LogDialog[] = {$/;"	v	file:
+qt_meta_stringdata_MainWindow	moc_mainwindow.cpp	/^static const char qt_meta_stringdata_MainWindow[] = {$/;"	v	file:
+qt_meta_stringdata_NetDialog	moc_netdialog.cpp	/^static const char qt_meta_stringdata_NetDialog[] = {$/;"	v	file:
+qt_meta_stringdata_UartDialog	moc_uartdialog.cpp	/^static const char qt_meta_stringdata_UartDialog[] = {$/;"	v	file:
+qt_metacall	moc_logdialog.cpp	/^int LogDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:LogDialog
+qt_metacall	moc_mainwindow.cpp	/^int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:MainWindow
+qt_metacall	moc_netdialog.cpp	/^int NetDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:NetDialog
+qt_metacall	moc_uartdialog.cpp	/^int UartDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:UartDialog
+qt_metacast	moc_logdialog.cpp	/^void *LogDialog::qt_metacast(const char *_clname)$/;"	f	class:LogDialog
+qt_metacast	moc_mainwindow.cpp	/^void *MainWindow::qt_metacast(const char *_clname)$/;"	f	class:MainWindow
+qt_metacast	moc_netdialog.cpp	/^void *NetDialog::qt_metacast(const char *_clname)$/;"	f	class:NetDialog
+qt_metacast	moc_uartdialog.cpp	/^void *UartDialog::qt_metacast(const char *_clname)$/;"	f	class:UartDialog
+qt_static_metacall	moc_logdialog.cpp	/^void LogDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:LogDialog
+qt_static_metacall	moc_mainwindow.cpp	/^void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:MainWindow
+qt_static_metacall	moc_netdialog.cpp	/^void NetDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:NetDialog
+qt_static_metacall	moc_uartdialog.cpp	/^void UartDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:UartDialog
+readfd	mainwindow.h	/^    fd_set readfd;$/;"	m	class:MainWindow
+recv_rsp_message	message.cpp	/^void MainWindow::recv_rsp_message(char *message, int length)$/;"	f	class:MainWindow
+retranslateUi	ui_logdialog.h	/^    void retranslateUi(QDialog *LogDialog)$/;"	f	class:Ui_LogDialog
+retranslateUi	ui_mainwindow.h	/^    void retranslateUi(QMainWindow *MainWindow)$/;"	f	class:Ui_MainWindow
+retranslateUi	ui_netdialog.h	/^    void retranslateUi(QDialog *NetDialog)$/;"	f	class:Ui_NetDialog
+retranslateUi	ui_uartdialog.h	/^    void retranslateUi(QDialog *UartDialog)$/;"	f	class:Ui_UartDialog
+s16	msg.h	/^typedef signed short        s16;$/;"	t
+s32	msg.h	/^typedef int                 s32;$/;"	t
+s32SelfTestResult	msg.h	/^    s32             s32SelfTestResult;$/;"	m	struct:stru_selftest_rsp
+s64	msg.h	/^typedef signed long long    s64;$/;"	t
+s8	msg.h	/^typedef char                s8;$/;"	t
+s8FileName	msg.h	/^    s8              s8FileName[20];$/;"	m	struct:stru_software_update_req
+s8MessageInfo	msg.h	/^    s8              s8MessageInfo[20];$/;"	m	struct:stru_send_gprs_message_req
+s8MessageInfo	msg.h	/^    s8              s8MessageInfo[20];$/;"	m	struct:stru_send_zigbee_message_req
+s8PhoneNum	msg.h	/^    s8              s8PhoneNum[11];$/;"	m	struct:stru_send_gprs_message_req
+s8Reserved	msg.h	/^    s8              s8Reserved;$/;"	m	struct:stru_send_gprs_message_req
+s8Version	msg.h	/^    s8              s8Version[8];$/;"	m	struct:stru_get_version_rsp
+send_req_message	message.cpp	/^void MainWindow::send_req_message(char *message, int length)$/;"	f	class:MainWindow
+set_Parity	init.cpp	/^int set_Parity(int fd,int databits,int stopbits,int parity)$/;"	f
+set_speed	init.cpp	/^void set_speed(int fd, int speed)$/;"	f
+setupUi	ui_logdialog.h	/^    void setupUi(QDialog *LogDialog)$/;"	f	class:Ui_LogDialog
+setupUi	ui_mainwindow.h	/^    void setupUi(QMainWindow *MainWindow)$/;"	f	class:Ui_MainWindow
+setupUi	ui_netdialog.h	/^    void setupUi(QDialog *NetDialog)$/;"	f	class:Ui_NetDialog
+setupUi	ui_uartdialog.h	/^    void setupUi(QDialog *UartDialog)$/;"	f	class:Ui_UartDialog
+sin_size	mainwindow.h	/^    int sin_size;$/;"	m	class:MainWindow
+speed_arr	init.cpp	/^int speed_arr[] = { B115200, B38400, B19200, B9600, B4800, B2400, B1200,            B300,B38400, B19200, B9600, B4800, B2400, B1200, B300, };$/;"	v
+staticMetaObject	moc_logdialog.cpp	/^const QMetaObject LogDialog::staticMetaObject = {$/;"	m	class:LogDialog	file:
+staticMetaObject	moc_mainwindow.cpp	/^const QMetaObject MainWindow::staticMetaObject = {$/;"	m	class:MainWindow	file:
+staticMetaObject	moc_netdialog.cpp	/^const QMetaObject NetDialog::staticMetaObject = {$/;"	m	class:NetDialog	file:
+staticMetaObject	moc_uartdialog.cpp	/^const QMetaObject UartDialog::staticMetaObject = {$/;"	m	class:UartDialog	file:
+staticMetaObjectExtraData	moc_logdialog.cpp	/^const QMetaObjectExtraData LogDialog::staticMetaObjectExtraData = {$/;"	m	class:LogDialog	file:
+staticMetaObjectExtraData	moc_mainwindow.cpp	/^const QMetaObjectExtraData MainWindow::staticMetaObjectExtraData = {$/;"	m	class:MainWindow	file:
+staticMetaObjectExtraData	moc_netdialog.cpp	/^const QMetaObjectExtraData NetDialog::staticMetaObjectExtraData = {$/;"	m	class:NetDialog	file:
+staticMetaObjectExtraData	moc_uartdialog.cpp	/^const QMetaObjectExtraData UartDialog::staticMetaObjectExtraData = {$/;"	m	class:UartDialog	file:
+statusBar	ui_mainwindow.h	/^    QStatusBar *statusBar;$/;"	m	class:Ui_MainWindow
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_beep_control_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_beep_control_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_get_eeprom_data_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_get_eeprom_data_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_get_register_data_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_get_register_data_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_get_version_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_get_version_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_led_control_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_led_control_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_machine_info_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_machine_info_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_selftest_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_selftest_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_send_gprs_message_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_send_gprs_message_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_send_zigbee_message_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_send_zigbee_message_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_set_eeprom_data_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_set_eeprom_data_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_set_register_data_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_set_register_data_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_software_update_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_software_update_rsp
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_tod_adjust_req
+struMsgHeader	msg.h	/^    STRU_MSG_HEAD   struMsgHeader;$/;"	m	struct:stru_tod_adjust_rsp
+struTimeInfo	msg.h	/^    STRU_TIME_INFO  struTimeInfo;$/;"	m	struct:stru_tod_adjust_req
+stru_beep_control_req	msg.h	/^struct stru_beep_control_req {$/;"	s
+stru_beep_control_rsp	msg.h	/^struct stru_beep_control_rsp {$/;"	s
+stru_get_eeprom_data_req	msg.h	/^struct stru_get_eeprom_data_req {$/;"	s
+stru_get_eeprom_data_rsp	msg.h	/^struct stru_get_eeprom_data_rsp {$/;"	s
+stru_get_register_data_req	msg.h	/^struct stru_get_register_data_req {$/;"	s
+stru_get_register_data_rsp	msg.h	/^struct stru_get_register_data_rsp {$/;"	s
+stru_get_version_req	msg.h	/^struct stru_get_version_req {$/;"	s
+stru_get_version_rsp	msg.h	/^struct stru_get_version_rsp {$/;"	s
+stru_led_control_req	msg.h	/^struct stru_led_control_req {$/;"	s
+stru_led_control_rsp	msg.h	/^struct stru_led_control_rsp {$/;"	s
+stru_machine_info_req	msg.h	/^struct  stru_machine_info_req {$/;"	s
+stru_machine_info_rsp	msg.h	/^struct stru_machine_info_rsp {$/;"	s
+stru_selftest_req	msg.h	/^struct stru_selftest_req {$/;"	s
+stru_selftest_rsp	msg.h	/^struct stru_selftest_rsp {$/;"	s
+stru_send_gprs_message_req	msg.h	/^struct stru_send_gprs_message_req {$/;"	s
+stru_send_gprs_message_rsp	msg.h	/^struct stru_send_gprs_message_rsp {$/;"	s
+stru_send_zigbee_message_req	msg.h	/^struct stru_send_zigbee_message_req {$/;"	s
+stru_send_zigbee_message_rsp	msg.h	/^struct stru_send_zigbee_message_rsp {$/;"	s
+stru_set_eeprom_data_req	msg.h	/^struct stru_set_eeprom_data_req {$/;"	s
+stru_set_eeprom_data_rsp	msg.h	/^struct stru_set_eeprom_data_rsp {$/;"	s
+stru_set_register_data_req	msg.h	/^struct stru_set_register_data_req {$/;"	s
+stru_set_register_data_rsp	msg.h	/^struct stru_set_register_data_rsp {$/;"	s
+stru_software_update_req	msg.h	/^struct stru_software_update_req {$/;"	s
+stru_software_update_rsp	msg.h	/^struct stru_software_update_rsp {$/;"	s
+stru_tod_adjust_req	msg.h	/^struct stru_tod_adjust_req {$/;"	s
+stru_tod_adjust_rsp	msg.h	/^struct stru_tod_adjust_rsp {$/;"	s
+systimer	mainwindow.h	/^    QTimer *systimer;$/;"	m	class:MainWindow
+timer	mainwindow.h	/^    QTimer *timer;$/;"	m	class:MainWindow
+u	logdialog.h	/^    UartDialog *u;$/;"	m	class:LogDialog
+u16	msg.h	/^typedef unsigned short      u16;$/;"	t
+u16Month	msg.h	/^    u16     u16Month;$/;"	m	struct:__anon2
+u16MsgLength	msg.h	/^    u16     u16MsgLength;       \/*有效消息数据长度*\/$/;"	m	struct:__anon1
+u16MsgType	msg.h	/^    u16     u16MsgType;         \/* 消息类型*\/$/;"	m	struct:__anon1
+u16Offset	msg.h	/^    u16             u16Offset;$/;"	m	struct:stru_get_eeprom_data_req
+u16Offset	msg.h	/^    u16             u16Offset;$/;"	m	struct:stru_set_eeprom_data_req
+u16Reserved	msg.h	/^    u16             u16Reserved;$/;"	m	struct:stru_get_eeprom_data_req
+u16Reserved	msg.h	/^    u16             u16Reserved;$/;"	m	struct:stru_set_eeprom_data_req
+u16Year	msg.h	/^    u16     u16Year;$/;"	m	struct:__anon2
+u32	msg.h	/^typedef unsigned    int     u32;$/;"	t
+u32BlinkTime	msg.h	/^    u32             u32BlinkTime;$/;"	m	struct:stru_led_control_req
+u32FreeDisk	msg.h	/^    u32             u32FreeDisk;$/;"	m	struct:stru_machine_info_rsp
+u32FreeMem	msg.h	/^    u32             u32FreeMem;$/;"	m	struct:stru_machine_info_rsp
+u32Len	msg.h	/^    u32             u32Len;$/;"	m	struct:stru_software_update_req
+u32Offset	msg.h	/^    u32             u32Offset;$/;"	m	struct:stru_get_register_data_req
+u32Offset	msg.h	/^    u32             u32Offset;$/;"	m	struct:stru_set_register_data_req
+u32RegisterData	msg.h	/^    u32             u32RegisterData;$/;"	m	struct:stru_get_register_data_rsp
+u32RegisterData	msg.h	/^    u32             u32RegisterData;$/;"	m	struct:stru_set_register_data_req
+u64	msg.h	/^typedef unsigned long long  u64;$/;"	t
+u8	msg.h	/^typedef unsigned char       u8;$/;"	t
+u8BeepCtrlOperation	msg.h	/^    u8              u8BeepCtrlOperation;$/;"	m	struct:stru_beep_control_req
+u8Buffer	msg.h	/^    u8              u8Buffer[BUF_SIZE];$/;"	m	struct:stru_software_update_req
+u8Day	msg.h	/^    u8      u8Day;$/;"	m	struct:__anon2
+u8EepromData	msg.h	/^    u8              u8EepromData[4];$/;"	m	struct:stru_get_eeprom_data_rsp
+u8EepromData	msg.h	/^    u8              u8EepromData[4];$/;"	m	struct:stru_set_eeprom_data_req
+u8Hour	msg.h	/^    u8      u8Hour;$/;"	m	struct:__anon2
+u8LedCmd	msg.h	/^    u8              u8LedCmd;$/;"	m	struct:stru_led_control_req
+u8LedType	msg.h	/^    u8              u8LedType;$/;"	m	struct:stru_led_control_req
+u8Minute	msg.h	/^    u8      u8Minute;$/;"	m	struct:__anon2
+u8Padding	msg.h	/^    u8              u8Padding[3];$/;"	m	struct:stru_get_version_rsp
+u8QueryId	msg.h	/^    u8              u8QueryId;$/;"	m	struct:stru_get_version_req
+u8QueryId	msg.h	/^    u8              u8QueryId;$/;"	m	struct:stru_get_version_rsp
+u8Reserved	msg.h	/^    u8              u8Reserved[2];$/;"	m	struct:stru_led_control_req
+u8Reserved	msg.h	/^    u8              u8Reserved[3];$/;"	m	struct:stru_beep_control_req
+u8Reserved	msg.h	/^    u8              u8Reserved[3];$/;"	m	struct:stru_beep_control_rsp
+u8Reserved	msg.h	/^    u8              u8Reserved[3];$/;"	m	struct:stru_get_version_req
+u8Reserved	msg.h	/^    u8              u8Reserved[3];$/;"	m	struct:stru_led_control_rsp
+u8Reserved	msg.h	/^    u8              u8Reserved[3];$/;"	m	struct:stru_send_gprs_message_rsp
+u8Reserved	msg.h	/^    u8              u8Reserved[3];$/;"	m	struct:stru_send_zigbee_message_rsp
+u8Reserved	msg.h	/^    u8              u8Reserved[3];$/;"	m	struct:stru_set_eeprom_data_rsp
+u8Reserved	msg.h	/^    u8              u8Reserved[3];$/;"	m	struct:stru_set_register_data_rsp
+u8Reserved	msg.h	/^    u8              u8Reserved[3];$/;"	m	struct:stru_software_update_rsp
+u8Reserved	msg.h	/^    u8              u8Reserved[3];$/;"	m	struct:stru_tod_adjust_rsp
+u8Reserved	msg.h	/^    u8      u8Reserved[3];$/;"	m	struct:__anon1
+u8Second	msg.h	/^    u8      u8Second;$/;"	m	struct:__anon2
+u8TransType	msg.h	/^    u8      u8TransType;$/;"	m	struct:__anon1
+uartbutton	ui_logdialog.h	/^    QPushButton *uartbutton;$/;"	m	class:Ui_LogDialog
+uartfd	mainwindow.h	/^    int uartfd;$/;"	m	class:MainWindow
+uartlineEdit	ui_uartdialog.h	/^    QLineEdit *uartlineEdit;$/;"	m	class:Ui_UartDialog
+uartlogbutton	ui_uartdialog.h	/^    QPushButton *uartlogbutton;$/;"	m	class:Ui_UartDialog
+uartreturnbutton	ui_uartdialog.h	/^    QPushButton *uartreturnbutton;$/;"	m	class:Ui_UartDialog
+ui	logdialog.h	/^    Ui::LogDialog *ui;$/;"	m	class:LogDialog
+ui	mainwindow.h	/^    Ui::MainWindow *ui;$/;"	m	class:MainWindow
+ui	netdialog.h	/^    Ui::NetDialog *ui;$/;"	m	class:NetDialog
+ui	uartdialog.h	/^    Ui::UartDialog *ui;$/;"	m	class:UartDialog
+vt	mainwindow.h	/^    struct timeval  vt;$/;"	m	class:MainWindow	typeref:struct:MainWindow::timeval
+~LogDialog	logdialog.cpp	/^LogDialog::~LogDialog()$/;"	f	class:LogDialog
+~MainWindow	mainwindow.cpp	/^MainWindow::~MainWindow()$/;"	f	class:MainWindow
+~NetDialog	netdialog.cpp	/^NetDialog::~NetDialog()$/;"	f	class:NetDialog
+~UartDialog	uartdialog.cpp	/^UartDialog::~UartDialog()$/;"	f	class:UartDialog

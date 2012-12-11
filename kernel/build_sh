@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "make zImage start......"
+
+make zImage -j 4
+
+echo "copy zImage.bin to /root/.gvfs/192.168.1.30 上的 tftp"
+#"/root/.gvfs/192.168.1.30 上的 tftp"
+cp -f zImage.bin  /tftpboot
+cp -f zImage.bin "/root/.gvfs/192.168.1.30 上的 tftp"
+cp -f zImage.bin "/root/.gvfs/192.168.1.21 上的 tftp"
+

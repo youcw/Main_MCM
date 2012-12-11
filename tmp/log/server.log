@@ -1,0 +1,19 @@
+make[1]: Entering directory `/home/tarena/workdir/project/gprs_security/server'
+rm -f moc_mainwindow.cpp
+rm -f qrc_video.cpp
+rm -f ui_mainwindow.h
+rm -f main.o mainwindow.o moc_mainwindow.o qrc_video.o
+rm -f *~ core *.core
+rm -f server 
+rm -f Makefile
+make[1]: Leaving directory `/home/tarena/workdir/project/gprs_security/server'
+make[1]: Entering directory `/home/tarena/workdir/project/gprs_security/server'
+/home/tarena/workdir/build-qt/bin/uic mainwindow.ui -o ui_mainwindow.h
+arm-linux-g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I../../../build-qt/mkspecs/qws/linux-arm-g++ -I. -I../../../build-qt/include/QtCore -I../../../build-qt/include/QtNetwork -I../../../build-qt/include/QtGui -I../../../build-qt/include -I. -I. -I. -o main.o main.cpp
+arm-linux-g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I../../../build-qt/mkspecs/qws/linux-arm-g++ -I. -I../../../build-qt/include/QtCore -I../../../build-qt/include/QtNetwork -I../../../build-qt/include/QtGui -I../../../build-qt/include -I. -I. -I. -o mainwindow.o mainwindow.cpp
+/home/tarena/workdir/build-qt/bin/moc -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I../../../build-qt/mkspecs/qws/linux-arm-g++ -I. -I../../../build-qt/include/QtCore -I../../../build-qt/include/QtNetwork -I../../../build-qt/include/QtGui -I../../../build-qt/include -I. -I. -I. mainwindow.h -o moc_mainwindow.cpp
+arm-linux-g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I../../../build-qt/mkspecs/qws/linux-arm-g++ -I. -I../../../build-qt/include/QtCore -I../../../build-qt/include/QtNetwork -I../../../build-qt/include/QtGui -I../../../build-qt/include -I. -I. -I. -o moc_mainwindow.o moc_mainwindow.cpp
+/home/tarena/workdir/build-qt/bin/rcc -name video video.qrc -o qrc_video.cpp
+arm-linux-g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I../../../build-qt/mkspecs/qws/linux-arm-g++ -I. -I../../../build-qt/include/QtCore -I../../../build-qt/include/QtNetwork -I../../../build-qt/include/QtGui -I../../../build-qt/include -I. -I. -I. -o qrc_video.o qrc_video.cpp
+arm-linux-g++ -Wl,-O1 -Wl,-rpath,/home/tarena/workdir/build-qt/lib -o server main.o mainwindow.o moc_mainwindow.o qrc_video.o    -L/home/tarena/workdir/build-qt/lib -lQtGui -L/home/tarena/workdir/tslib/lib -L/home/tarena/workdir/build-qt/lib -lts -lQtNetwork -lQtCore -lm -lrt -ldl -lpthread
+make[1]: Leaving directory `/home/tarena/workdir/project/gprs_security/server'

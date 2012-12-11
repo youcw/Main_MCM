@@ -5,35 +5,53 @@
 #include <unistd.h>
 #include <strings.h>
 #include "common.h"
+#include "msg.h"
 #define READ        1
 #define WRITE       0
 
+#define TRANSFER_NET    0
+#define TRANSFER_UART   1
+
 /* 设备操作命令字*/
-#define ALARM_ON        (0x10000)
-#define ALARM_OFF       (0x10001)
-#define LED_ON          (0x10002)
-#define LED_OFF         (0x10003)
-#define ADC_INPUT_BIT   (0x10004)
-#define ADC_INPUT_PIN   (0x10005)
-#define REGEDITOR_READ  (0x10006)
-#define REGEDITOR_WRITE (0x10007)
-#define EEPROM_READ     (0x10008)
-#define EEPROM_WRITE    (0x10009)
+
+#define LED1_ON		        (0x10001)
+#define LED1_OFF	        (0x10002)
+#define LED2_ON		        (0x10003)
+#define LED2_OFF	        (0X10004)
+
+#define	REGEDITOR_WRITE	        (0x10005)
+#define REGEDITOR_READ	        (0x10006)
+
+#define BEEP_ON                (0x10007)
+#define BEEP_OFF               (0x10008)
+
+
+#define IOCTL_DS18B20_S_RESET                   0x10009
+#define IOCTL_DS18B20_S_START                   0x10010
+#define IOCTL_DS18B20_S_BIT                     0x10011
+
+#define ADC_RESOL               (0x10012)
+#define ADC_INPUT_PIN           (0x10013)
+
+#define EEPROM_READ_DATA        (0x10008)
+#define EEPROM_WRITE_DATA       (0x10009)
+#define EEPROM_WRITE_ADDR       (0x10010)
 
 /* 设备名称*/
-#define REGEDITOR_DEV   "/dev/regeditor"
-#define LED_DEV         "/dev/led"
-#define TEMP_DEV        "/dev/temp"
-#define ADC_DEV         "/dev/adc"
-#define BUTTON_DEV      "/dev/event1"
-#define EEPROM_DEV      "/dev/eeprom"
-#define LCD_DEV         "/dev/fb0"
-#define GPRS_DEV        "/dev/s3c2410_serial0"
-#define ZIGBEE_DEV      "/dev/s3c2410_serial1"
-#define BEEP_DEV        "/dev/beep"
+#define REGEDITOR_DEV           "/dev/regeditor"
+#define LED_DEV                 "/dev/leds"
+#define BEEP_DEV                "/dev/beeps"
+#define TEMP_DEV                "/dev/ds18b20"
+#define ADC_DEV                 "/dev/adc"
+
+#define BUTTON_DEV              "/dev/event1"
+#define EEPROM_DEV              "/dev/at24cxx0"
+#define LCD_DEV                 "/dev/fb0"
+#define GPRS_DEV                "/dev/s3c2410_serial0"
+#define ZIGBEE_DEV              "/dev/s3c2410_serial1"
 
 /* 温度报警阀值*/
-#define TEMPERATURE_ALARM       50
+#define TEMPERATURE_ALARM       35
 
 /* 设备文件描述符*/
 int regeditorfd;
@@ -72,10 +90,10 @@ extern int flash_led(unsigned long time);
 extern int stop_led(void);
 
 /* 读温度*/
-extern float get_ds18b20_temperature(void);
+extern void get_ds18b20_temperature(f32 *TempInfo);
 
 /* 读电压值*/
-extern float get_adc_voltage(void);
+extern void get_adc_voltage(f32 *AdcInfo);
 
 /* 配置 ADC*/
 extern void adc_config(int bit, int channel);

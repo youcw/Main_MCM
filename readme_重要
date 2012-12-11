@@ -1,0 +1,114 @@
+注意：
+编译整个项目源代码方法：
+
+1.进入项目源码根目录，键入：
+make help
+可以看到编译选项
+Usage:
+make uboot      # Compile UBoot
+make kernel     # Compile Linux Kernel
+make ramdisk    # Generate ramdisk.img
+make system     # Generate system.img
+make app        # Build Project applicatins
+make drivers    # Build drivers
+make all        # make uboot kernel ramdisk system app drivers
+
+2.make all可以编译整个项目，其中包括uboot kernel ramdisk system app drivers
+
+3.make (uboot kernel ramdisk system app drivers) 可以进行单独编译
+
+1.board: 板卡运行软件
+    1.1 include 
+        头文件
+    
+    1.2 src
+        源文件
+    
+    1.2.2 Main
+        Main源码
+
+2.drivers:驱动目录
+    2.1 adc：
+        电压采集驱动
+    2.2 eeprom：
+        eeprom驱动
+    2.3 led：
+        led点灯驱动
+    2.4 temp：
+        温度传感器驱动
+    2.5 beep：
+        蜂鸣器驱动
+    2.6 button：
+        按键驱动
+    2.7：register
+        寄存器操作驱动
+
+3.image：
+    目标镜像
+    烧写方法:
+        u-boot.bin:
+                tftp 50008000 u-boot.bin
+                nand erase 0 100000
+                nand write 50008000 0 100000
+    
+        zImage.bin:
+                tftp 50008000 kernel.bin
+                nand erase 200000 500000
+                nand write 50008000 200000 500000
+        
+        ramdisk.img:
+                tftp 50008000 ramdisk.img
+                nand erase 700000 500000
+                nand write c00000 a00000
+
+        system.img:
+                tftp 50008000 system.img
+                nand erase c00000
+                nand write.yaffs 50008000 c00000 $filesize
+
+        设置启动参数：
+        setenv bootcmd nand read 50008000 200000 500000 \; nand read 50800000 700000 500000\; bootm 50008000
+        setenv bootargs root=/dev/ram rw init=/linuxrc console=ttySAC0,115200 initrd=0x50800000,8M
+        saveenv
+4.pc：
+    上位机客户端软件
+    4.1编译：
+        make app
+        目标存放在images/PCOM
+    4.2 运行
+        ./images/PCOM
+
+5.system
+  用户应用软件
+
+6.rootfs
+        根文件系统
+
+7.kernel
+        内核源码
+
+8.u-boot
+        bootloader源代码
+
+9.server
+        智能服务器终端
+
+10.tools
+        编译server工具
+
+11.flash.sh
+        系统安装脚本(前提是使用提供的u-boot.bin镜像)
+启动uboot，进入命令行模式，输入：
+fastboot命令：
+tarena # fastboot //出现如下提示信息
+Fastboot: employ default partition information
+[Partition table on NAND]
+ptn 0 name='bootloader' start=0x0 len=0x100000(~1024KB) 
+ptn 1 name='param' start=0x100000 len=0x100000(~1024KB) 
+ptn 2 name='kernel' start=0x200000 len=0x500000(~5120KB) 
+ptn 3 name='ramdisk' start=0x700000 len=0x500000(~5120KB) 
+ptn 4 name='system' start=0xC00000 len=0x3F400000(~1036288KB) (Yaffs)
+Insert a OTG cable into the connector!
+通过USB将开发板和主机连接起来，
+在linux主机执行：
+flash.sh命令即可

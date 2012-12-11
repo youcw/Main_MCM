@@ -1,9 +1,14 @@
 #ifndef __SOCKET_H
 #define __SOCKET_H
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
 
-extern void register_xfer(char *pskb);
-extern void sw_update(char *pskb);
-extern void get_temperature(char *pskb); 
-extern void get_voltage(char *pskb);
-extern void eeprom_xfer(char *pskb);
+#define     SIZE    (1024 * 6)
+int server_sockfd;
+int sin_size;
+struct sockaddr_in server_addr;
+struct sockaddr_in client_addr;
+
 #endif

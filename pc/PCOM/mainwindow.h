@@ -9,6 +9,8 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <sys/time.h>
+
 
 #include <QMainWindow>
 #include <QtDebug>
@@ -32,7 +34,12 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    
+
+    void init(void);
+    int send_req_message(void *message, int length);
+    int recv_rsp_message(void *message, int length);
+    void init_uart(void);
+
 private:
     Ui::MainWindow *ui;
 
@@ -48,14 +55,23 @@ private slots:
     void SoftWareUpdateFunction(void);
     void UpdateWallTimeFunction(void);
     void TimeAdjustFunction(void);
-
+    void ReConnectFunction(void);
 public:
+    int TransFlag;  /* 0: net; 1:uart*/
+    char IpBuf[20];
+    char UartBuf[20];
+    /* 串口通信*/
+    int uartfd;
+
     /* 网络通信变量*/
     int client_sockfd;
     int len;
     int sin_size;
     char buf[BUF_SIZE];
     struct sockaddr_in client_addr;
+
+    fd_set readfd;
+    struct timeval  vt;
 
     bool ok;
 
@@ -71,35 +87,6 @@ public:
     /* 显示进度条*/
     QProgressDialog    *processdlg;
 
-    /* 查看设备状态*/
-    struct CheckMachineStat MachineInfo;
-
-    /* 查看寄存器*/
-    struct RegisterControl RegsInfo;
-
-    /* 软件更新*/
-    struct SoftWareUpdate SW_Update;
-
-    /* 查看EEPROM*/
-    struct EepromControl EepromInfo;
-
-    /* GPRS短信息*/
-    struct GprsMessage GprsMessageInfo;
-
-    /* ZIGBEE信息*/
-    struct ZigbeeMessage ZigbeeMessageInfo;
-
-    /* 报警器控制 */
-    struct BeepControl  BeepInfo;
-
-    /* LED控制*/
-    struct LedControl   LedInfo;
-
-    /* 硬件自检*/
-    struct HardWareTestSelf HardWareInfo;
-
-    /* 时间校准*/
-    struct TimeAdjust       TimeInfo;
 };
 
 #endif // MAINWINDOW_H

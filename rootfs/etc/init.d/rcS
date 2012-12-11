@@ -1,0 +1,32 @@
+#!/bin/sh
+# This is the first script called by init process
+/bin/mount -a
+mkdir /dev/pts
+mount -t devpts devpts /dev/pts
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+echo "***************************************"
+echo "***************************************"
+echo "***************************************"
+echo " "
+echo "setup network"
+ifconfig eth0 192.168.1.120
+ifconfig lo 127.0.0.1
+
+echo "mount fs"
+mount -t yaffs2 /dev/mtdblock4 /home/
+
+echo "install modules"
+cd /home/modules/
+./drivers_install.sh
+
+echo "setup Main"
+cd /home/app
+./Main &
+
+echo " "
+echo "***************************************"
+echo "***************************************"
+echo "***************************************"
+

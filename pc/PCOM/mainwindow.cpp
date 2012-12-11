@@ -10,17 +10,36 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     /* 创建主界面*/
     ui->setupUi(this);
+}
+
+void MainWindow::init()
+{
+    if(TransFlag==TRANSFER_UART)
+    {
+    /* 串口初始化*/
+        init_uart();
+    }
+    else if(TransFlag==TRANSFER_NET)
+    {
+    uartfd  = 0;
+    /* 设置超时时间*/
+    //struct timeval time_out;
+    //time_out.tv_sec = 5;
+    //time_out.tv_usec = 0;       //设置超时时间10秒
 
     /* 创建socket跟设备进行通信*/
     client_addr.sin_family      = AF_INET;
-    client_addr.sin_addr.s_addr = inet_addr("192.168.0.100");   //无限制
+    client_addr.sin_addr.s_addr = inet_addr(IpBuf);   //无限制
     client_addr.sin_port        = htons(8000);
 
     if ((client_sockfd = socket(PF_INET,SOCK_DGRAM,0)) < 0) {
-        printf("socket error\n");
-        exit(-1);
-    }
+            printf("socket error\n");
+            exit(-1);
+        }
     sin_size = sizeof(struct sockaddr_in);
+    //setsockopt(client_sockfd,SOL_SOCKET,SO_RCVTIMEO,&time_out,sizeof(time_out));   //设置接收数据超时
+    //setsockopt(client_sockfd,SOL_SOCKET,SO_SNDTIMEO,&time_out,sizeof(time_out));   //设置发送数据超时
+    }
 
     /*启动定时器，每隔5S查看设备状态和系统状态*/
     timer = new QTimer(this);
@@ -62,9 +81,17 @@ MainWindow::MainWindow(QWidget *parent) :
 
     /* 时间校准*/
     connect(ui->TimeAdjustButton, SIGNAL(clicked()), this, SLOT(TimeAdjustFunction()));
+
+    /* 重新连接*/
+    connect(ui->ReConnectButton, SIGNAL(clicked()), this, SLOT(ReConnectFunction()));
+
     /* 启动定时器*/
-    timer->start(5000000);
+    timer->start(5000);
     systimer->start(1000);
+
+    /* 初始化超时处理*/
+    vt.tv_sec   =   15;
+    vt.tv_usec  =   0;
 }
 
 MainWindow::~MainWindow()

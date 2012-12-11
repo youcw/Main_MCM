@@ -1,0 +1,53 @@
+make[1]: Entering directory `/home/tarena/workdir/project/gprs_security/drivers'
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/drivers/eeprom'
+make -C /home/tarena/workdir/project/gprs_security/kernel M=`pwd` modules 
+make[3]: Entering directory `/home/tarena/workdir/project/gprs_security/kernel'
+  Building modules, stage 2.
+  MODPOST 1 modules
+make[3]: Leaving directory `/home/tarena/workdir/project/gprs_security/kernel'
+cp at24cxx.ko /home/tarena/workdir/project/gprs_security/system/modules/ -av
+`at24cxx.ko' -> `/home/tarena/workdir/project/gprs_security/system/modules/at24cxx.ko'
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/drivers/eeprom'
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/drivers/register'
+make -C /home/tarena/workdir/project/gprs_security/kernel M=`pwd` modules 
+make[3]: Entering directory `/home/tarena/workdir/project/gprs_security/kernel'
+  Building modules, stage 2.
+  MODPOST 1 modules
+make[3]: Leaving directory `/home/tarena/workdir/project/gprs_security/kernel'
+cp regeditor_drv.ko /home/tarena/workdir/project/gprs_security/system/modules 
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/drivers/register'
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/drivers/led'
+make -C /home/tarena/workdir/project/gprs_security/kernel M=`pwd` modules 
+make[3]: Entering directory `/home/tarena/workdir/project/gprs_security/kernel'
+  Building modules, stage 2.
+  MODPOST 1 modules
+make[3]: Leaving directory `/home/tarena/workdir/project/gprs_security/kernel'
+cp led_drv.ko /home/tarena/workdir/project/gprs_security/system/modules/ -av
+`led_drv.ko' -> `/home/tarena/workdir/project/gprs_security/system/modules/led_drv.ko'
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/drivers/led'
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/drivers/beep'
+make -C /home/tarena/workdir/project/gprs_security/kernel M=`pwd` modules 
+make[3]: Entering directory `/home/tarena/workdir/project/gprs_security/kernel'
+  Building modules, stage 2.
+  MODPOST 1 modules
+make[3]: Leaving directory `/home/tarena/workdir/project/gprs_security/kernel'
+cp beep_drv.ko /home/tarena/workdir/project/gprs_security/system/modules -av
+`beep_drv.ko' -> `/home/tarena/workdir/project/gprs_security/system/modules/beep_drv.ko'
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/drivers/beep'
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/drivers/ds18b20'
+make -C /home/tarena/workdir/project/gprs_security/kernel M=`pwd` modules 
+make[3]: Entering directory `/home/tarena/workdir/project/gprs_security/kernel'
+  Building modules, stage 2.
+  MODPOST 1 modules
+make[3]: Leaving directory `/home/tarena/workdir/project/gprs_security/kernel'
+cp ds18b20_drv.ko /home/tarena/workdir/project/gprs_security/system/modules/ 
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/drivers/ds18b20'
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/drivers/adc'
+make -C /home/tarena/workdir/project/gprs_security/kernel M=`pwd` modules 
+make[3]: Entering directory `/home/tarena/workdir/project/gprs_security/kernel'
+  Building modules, stage 2.
+  MODPOST 1 modules
+make[3]: Leaving directory `/home/tarena/workdir/project/gprs_security/kernel'
+cp adc_drv.ko /home/tarena/workdir/project/gprs_security/system/modules/ 
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/drivers/adc'
+make[1]: Leaving directory `/home/tarena/workdir/project/gprs_security/drivers'

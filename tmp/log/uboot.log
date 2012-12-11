@@ -1,0 +1,1145 @@
+make[1]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot'
+Configuring for CW210 board...
+make[1]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot'
+make[1]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot'
+Generating include/autoconf.mk.dep
+make[1]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot'
+fatal: No names found, cannot describe anything.
+make[1]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot'
+for dir in tools examples api_examples ; do make -C $dir _depend ; done
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/tools'
+make[2]: Nothing to be done for `_depend'.
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/tools'
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/examples'
+make[2]: Nothing to be done for `_depend'.
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/examples'
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/api_examples'
+make[2]: Nothing to be done for `_depend'.
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/api_examples'
+Generating include/autoconf.mk
+make -C tools all
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/tools'
+gcc -g -Wall -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include2 -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o mkimage.o mkimage.c
+gcc -g -Wall -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include2 -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o image.o image.c
+gcc -Wall -pedantic -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include2 -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O  -o mkimage mkimage.o crc32.o image.o md5.o sha1.o fdt.o fdt_ro.o fdt_rw.o fdt_strerror.o fdt_wip.o
+strip mkimage
+gcc -g -Wall -pedantic -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include2 -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o envcrc.o envcrc.c
+gcc -g  -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include2 -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -c -o environment.o environment.c
+gcc -Wall -pedantic -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include2 -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -o envcrc envcrc.o crc32.o environment.o sha1.o
+gcc -g -Wall -pedantic -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include2 -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o ubsha1.o ubsha1.c
+gcc -Wall -pedantic -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include2 -idirafter /home/tarena/workdir/project/gprs_security/u-boot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -o ubsha1 ubsha1.o sha1.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/tools'
+make -C examples all
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/examples'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o hello_world.o hello_world.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o stubs.o stubs.c
+arm-linux-ar crv libstubs.a stubs.o
+r - stubs.o
+arm-linux-ld -g  -Ttext 0xc100000 \
+			-o hello_world -e hello_world hello_world.o libstubs.a \
+			-L/home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1 -lgcc
+arm-linux-objcopy -O srec hello_world hello_world.srec 2>/dev/null
+arm-linux-objcopy -O binary hello_world hello_world.bin 2>/dev/null
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/examples'
+make -C api_examples all
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/api_examples'
+arm-linux-ar crv libglue.a 
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/api_examples'
+make -C cpu/s5pv210 start.o
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/cpu/s5pv210'
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -c -o start.o start.S
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/cpu/s5pv210'
+make -C lib_generic/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/lib_generic'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o bzlib.o bzlib.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o bzlib_crctable.o bzlib_crctable.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o bzlib_decompress.o bzlib_decompress.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o bzlib_randtable.o bzlib_randtable.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o bzlib_huffman.o bzlib_huffman.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o crc32.o crc32.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o display_options.o display_options.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o lmb.o lmb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o sha1.o sha1.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o vsprintf.o vsprintf.c
+arm-linux-ar crv libgeneric.a bzlib.o bzlib_crctable.o bzlib_decompress.o bzlib_randtable.o bzlib_huffman.o crc32.o ctype.o display_options.o div64.o lmb.o ldiv.o sha1.o string.o vsprintf.o zlib.o
+r - bzlib.o
+r - bzlib_crctable.o
+r - bzlib_decompress.o
+r - bzlib_randtable.o
+r - bzlib_huffman.o
+r - crc32.o
+r - ctype.o
+r - display_options.o
+r - div64.o
+r - lmb.o
+r - ldiv.o
+r - sha1.o
+r - string.o
+r - vsprintf.o
+r - zlib.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/lib_generic'
+make -C cpu/s5pv210/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/cpu/s5pv210'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_cp.o nand_cp.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial.o serial.c
+serial.c: In function 'serial_setbrg':
+serial.c:43: warning: unused variable 'gd'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o usb_ohci.o usb_ohci.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o interrupts.o interrupts.c
+interrupts.c: In function 'interrupt_init':
+interrupts.c:192: warning: implicit declaration of function 'get_PCLK'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cpu.o cpu.c
+cpu.c: In function 'cleanup_before_linux':
+cpu.c:119: warning: implicit declaration of function 'arm_cache_flush'
+cpu.c: In function 'cpu_mmc_init':
+cpu.c:235: warning: implicit declaration of function 'setup_hsmmc_clock'
+cpu.c:236: warning: implicit declaration of function 'setup_hsmmc_cfg_gpio'
+cpu.c:237: warning: implicit declaration of function 'smdk_s3c_hsmmc_init'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand.o nand.c
+nand.c: In function 's3c_nand_correct_data':
+nand.c:373: warning: left-hand operand of comma expression has no effect
+nand.c:373: warning: left-hand operand of comma expression has no effect
+nand.c:372: warning: statement with no effect
+nand.c:375: warning: left-hand operand of comma expression has no effect
+nand.c:375: warning: statement with no effect
+nand.c:381: warning: statement with no effect
+nand.c:408: warning: statement with no effect
+nand.c:422: warning: left-hand operand of comma expression has no effect
+nand.c:422: warning: statement with no effect
+nand.c: In function 's3c_nand_calculate_ecc_8bit':
+nand.c:657: warning: statement with no effect
+nand.c: In function 's3c_nand_correct_data_8bit':
+nand.c:735: warning: statement with no effect
+nand.c:761: warning: left-hand operand of comma expression has no effect
+nand.c:761: warning: statement with no effect
+nand.c: In function 's3c_nand_write_page_8bit':
+nand.c:790: warning: initialization discards qualifiers from pointer target type
+nand.c:777: warning: unused variable 'nfreg'
+nand.c: In function 's3c_nand_read_page_8bit_for_irom':
+nand.c:818: warning: unused variable 'mecc_pos'
+nand.c: In function 's3c_nand_read_page_8bit':
+nand.c:844: warning: unused variable 'nfreg'
+nand.c: In function 'board_nand_init':
+nand.c:1245: warning: assignment from incompatible pointer type
+nand.c:1261: warning: assignment from incompatible pointer type
+nand.c:1303: warning: assignment from incompatible pointer type
+nand.c:1319: warning: assignment from incompatible pointer type
+nand.c: At top level:
+nand.c:101: warning: 's3c_nand_oob_218' defined but not used
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o onenand_cp.o onenand_cp.c
+onenand_cp.c: In function 'onenand_bl2_copy':
+onenand_cp.c:139: warning: unused variable 'rv'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbd-otg-hs.o usbd-otg-hs.c
+usbd-otg-hs.c: In function 's3c_usb_download_continue':
+usbd-otg-hs.c:1626: warning: format '%lx' expects type 'long unsigned int', but argument 3 has type 'u32'
+usbd-otg-hs.c: In function 's3c_usb_transfer_ep0':
+usbd-otg-hs.c:1175: warning: array subscript is above array bounds
+usbd-otg-hs.c:1183: warning: array subscript is above array bounds
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o movi.o movi.c
+movi.c: In function 'movi_bl2_copy':
+movi.c:38: warning: passing argument 4 of 'copy_bl2' makes pointer from integer without a cast
+movi.c:38: note: expected 'u32 *' but argument is of type 'int'
+movi.c:52: warning: passing argument 4 of 'copy_bl2' makes pointer from integer without a cast
+movi.c:52: note: expected 'u32 *' but argument is of type 'int'
+movi.c: In function 'movi_zImage_copy':
+movi.c:91: warning: passing argument 4 of 'copy_zImage' makes pointer from integer without a cast
+movi.c:91: note: expected 'u32 *' but argument is of type 'int'
+movi.c: In function 'movi_write_env':
+movi.c:108: warning: implicit declaration of function 'movi_write'
+movi.c: In function 'movi_read_env':
+movi.c:114: warning: implicit declaration of function 'movi_read'
+movi.c: In function 'movi_write_bl1':
+movi.c:131: warning: format '%x' expects type 'unsigned int', but argument 2 has type 'ulong'
+movi.c:123: warning: unused variable 'tmp'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o setup_hsmmc.o setup_hsmmc.c
+setup_hsmmc.c: In function 'setup_hsmmc_clock':
+setup_hsmmc.c:19: warning: implicit declaration of function 'get_MPLL_CLK'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o setup_ide.o setup_ide.c
+setup_ide.c:35: warning: "ATA_COMMAND" redefined
+/home/tarena/workdir/project/gprs_security/u-boot/include/ata.h:58: note: this is the location of the previous definition
+setup_ide.c: In function 'ide_preinit':
+setup_ide.c:67: warning: unused variable 'tmp'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o fastboot.o fastboot.c
+fastboot.c: In function 'fboot_usb_int_bulkin':
+fastboot.c:1688: warning: passing argument 1 of 'fboot_usb_write_in_fifo' discards qualifiers from pointer target type
+fastboot.c:749: note: expected 'u8 *' but argument is of type 'const char *'
+fastboot.c:1673: warning: unused variable 'DIEPCTL_IN'
+fastboot.c:1672: warning: unused variable 'remain_cnt'
+fastboot.c:1671: warning: unused variable 'bulkin_buf'
+fastboot.c: In function 'fboot_usb_int_bulkout':
+fastboot.c:1911: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness
+/home/tarena/workdir/project/gprs_security/u-boot/include/common.h:615: note: expected 'char *' but argument is of type 'u8 *'
+fastboot.c:1911: warning: embedded '\0' in format
+fastboot.c: In function 'fboot_usb_transfer':
+fastboot.c:2346: warning: unused variable 'tmp'
+fastboot.c:2345: warning: unused variable 'DIEPINT_IN'
+fastboot.c:2344: warning: unused variable 'DIEPCTL_IN'
+fastboot.c: In function 'fboot_usb_int_hndlr':
+fastboot.c:2426: warning: unused variable 'val'
+fastboot.c: In function 'fastboot_init':
+fastboot.c:2580: warning: unused variable 'devctl'
+fastboot.c: In function 'fastboot_poll':
+fastboot.c:2644: warning: unused variable 'intrrx'
+fastboot.c:2643: warning: unused variable 'intrtx'
+fastboot.c: In function 'fastboot_tx_status':
+fastboot.c:2675: warning: unused variable 'i'
+fastboot.c:2674: warning: unused variable 'ret'
+fastboot.c: In function 'fboot_usb_transfer_ep0':
+fastboot.c:1384: warning: array subscript is above array bounds
+fastboot.c:1392: warning: array subscript is above array bounds
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o fimd.o fimd.c
+fimd.c: In function 'LCD_Initialize_NONAME1':
+fimd.c:454: warning: implicit declaration of function 'LCD_setprogress'
+fimd.c:333: warning: unused variable 'pBuffer'
+fimd.c:332: warning: unused variable 'i'
+fimd.c: At top level:
+fimd.c:481: warning: conflicting types for 'LCD_setprogress'
+fimd.c:454: note: previous implicit declaration of 'LCD_setprogress' was here
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o pmic.o pmic.c
+pmic.c: In function 'Delay':
+pmic.c:6: warning: unused variable 'j'
+pmic.c: At top level:
+pmic.c:11: warning: function declaration isn't a prototype
+pmic.c:18: warning: function declaration isn't a prototype
+pmic.c:25: warning: function declaration isn't a prototype
+pmic.c:32: warning: function declaration isn't a prototype
+pmic.c:39: warning: function declaration isn't a prototype
+pmic.c:47: warning: function declaration isn't a prototype
+pmic.c:55: warning: function declaration isn't a prototype
+pmic.c:63: warning: function declaration isn't a prototype
+pmic.c:71: warning: function declaration isn't a prototype
+pmic.c: In function 'IIC_ERead':
+pmic.c:202: warning: control reaches end of non-void function
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o tq_input.o tq_input.c
+tq_input.c: In function 'printf_adc_regs':
+tq_input.c:22: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:22: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:23: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:23: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:24: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:24: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:25: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:25: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:26: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:26: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:27: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:27: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:28: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:28: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:29: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:29: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:30: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:30: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:31: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:31: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:32: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:32: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:33: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:33: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:34: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:34: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:35: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:35: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:36: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:36: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:37: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:37: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:38: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:38: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c: In function 'tq_touch_init':
+tq_input.c:103: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:103: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:105: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:105: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:107: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:107: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:109: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+tq_input.c:109: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'volatile long unsigned int *'
+tq_input.c:158: warning: format '%d' expects type 'int', but argument 2 has type 'long unsigned int'
+tq_input.c:158: warning: format '%d' expects type 'int', but argument 3 has type 'long unsigned int'
+tq_input.c: In function 'tq_read_touch':
+tq_input.c:185: warning: control reaches end of non-void function
+arm-linux-ar crv libs5pv210.a nand_cp.o serial.o  usb_ohci.o interrupts.o cpu.o nand.o onenand.o onenand_cp.o usbd-otg-hs.o movi.o setup_hsmmc.o setup_ide.o fastboot.o fimd.o pmic.o s5pv210_fb.module tq_input.o
+r - nand_cp.o
+r - serial.o
+r - usb_ohci.o
+r - interrupts.o
+r - cpu.o
+r - nand.o
+r - onenand.o
+r - onenand_cp.o
+r - usbd-otg-hs.o
+r - movi.o
+r - setup_hsmmc.o
+r - setup_ide.o
+r - fastboot.o
+r - fimd.o
+r - pmic.o
+r - s5pv210_fb.module
+r - tq_input.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/cpu/s5pv210'
+make -C cpu/s5pv210/s5pv210/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/cpu/s5pv210/s5pv210'
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -c -o cpu_init.o cpu_init.S
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o speed.o speed.c
+arm-linux-ar crv libs5pv210.a cpu_init.o speed.o
+r - cpu_init.o
+r - speed.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/cpu/s5pv210/s5pv210'
+make -C lib_arm/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/lib_arm'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o board.o board.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o bootm.o bootm.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cache.o cache.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o interrupts.o interrupts.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o rbtree.o rbtree.c
+arm-linux-ar crv libarm.a _ashldi3.o _ashrdi3.o _divsi3.o _modsi3.o _udivsi3.o _umodsi3.o board.o bootm.o cache.o div0.o interrupts.o rbtree.o
+r - _ashldi3.o
+r - _ashrdi3.o
+r - _divsi3.o
+r - _modsi3.o
+r - _udivsi3.o
+r - _umodsi3.o
+r - board.o
+r - bootm.o
+r - cache.o
+r - div0.o
+r - interrupts.o
+r - rbtree.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/lib_arm'
+make -C fs/cramfs/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/cramfs'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cramfs.o cramfs.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o uncompress.o uncompress.c
+arm-linux-ar crv libcramfs.a cramfs.o uncompress.o
+r - cramfs.o
+r - uncompress.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/cramfs'
+make -C fs/fat/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/fat'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o fat.o fat.c
+In file included from fat.c:36:
+/home/tarena/workdir/project/gprs_security/u-boot/include/fat.h:195: warning: function declaration isn't a prototype
+fat.c: In function 'fat_register_device':
+fat.c:131: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'ulong'
+fat.c:131: warning: format '%x' expects type 'unsigned int', but argument 4 has type 'ulong'
+fat.c: In function 'write_pbr':
+fat.c:157: warning: implicit declaration of function 'malloc'
+fat.c:157: warning: assignment makes pointer from integer without a cast
+fat.c:241: warning: format '%x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+fat.c:153: warning: unused variable 'reserved_cnt'
+fat.c: In function 'write_reserved':
+fat.c:283: warning: assignment makes pointer from integer without a cast
+fat.c:282: warning: unused variable 'i'
+fat.c: In function 'write_fat':
+fat.c:325: warning: assignment makes pointer from integer without a cast
+fat.c:333: warning: assignment makes pointer from integer without a cast
+fat.c:342: warning: unused variable 'temp'
+fat.c: In function 'mklabel':
+fat.c:389: warning: implicit declaration of function '__toupper'
+fat.c: In function 'fat_format_device':
+fat.c:437: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'ulong'
+fat.c:437: warning: format '%x' expects type 'unsigned int', but argument 4 has type 'ulong'
+fat.c: At top level:
+fat.c:384: warning: 'mklabel' defined but not used
+fat.c: In function 'read_bootsectandvi':
+fat.c:1033: warning: array subscript is above array bounds
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o file.o file.c
+In file included from file.c:31:
+/home/tarena/workdir/project/gprs_security/u-boot/include/fat.h:195: warning: function declaration isn't a prototype
+arm-linux-ar crv libfat.a fat.o file.o
+r - fat.o
+r - file.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/fat'
+make -C fs/fdos/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/fdos'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o fat.o fat.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o vfat.o vfat.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o dev.o dev.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o fdos.o fdos.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o fs.o fs.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o subdir.o subdir.c
+arm-linux-ar crv libfdos.a fat.o vfat.o dev.o fdos.o fs.o subdir.o
+r - fat.o
+r - vfat.o
+r - dev.o
+r - fdos.o
+r - fs.o
+r - subdir.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/fdos'
+make -C fs/jffs2/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/jffs2'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o jffs2_1pass.o jffs2_1pass.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o compr_rtime.o compr_rtime.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o compr_rubin.o compr_rubin.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o compr_zlib.o compr_zlib.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mini_inflate.o mini_inflate.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o compr_lzo.o compr_lzo.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o compr_lzari.o compr_lzari.c
+arm-linux-ar crv libjffs2.a jffs2_1pass.o compr_rtime.o compr_rubin.o compr_zlib.o mini_inflate.o compr_lzo.o compr_lzari.o
+r - jffs2_1pass.o
+r - compr_rtime.o
+r - compr_rubin.o
+r - compr_zlib.o
+r - mini_inflate.o
+r - compr_lzo.o
+r - compr_lzari.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/jffs2'
+make -C fs/reiserfs/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/reiserfs'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o reiserfs.o reiserfs.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o dev.o dev.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mode_string.o mode_string.c
+arm-linux-ar crv libreiserfs.a reiserfs.o dev.o mode_string.o
+r - reiserfs.o
+r - dev.o
+r - mode_string.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/reiserfs'
+make -C fs/ext2/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/ext2'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ext2fs.o ext2fs.c
+ext2fs.c: In function 'ext2fs_format':
+ext2fs.c:1051: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'ulong'
+ext2fs.c:1051: warning: format '%x' expects type 'unsigned int', but argument 4 has type 'ulong'
+ext2fs.c:1561: warning: assignment from incompatible pointer type
+ext2fs.c:1585: warning: assignment from incompatible pointer type
+ext2fs.c:1598: warning: assignment from incompatible pointer type
+ext2fs.c:1647: warning: assignment from incompatible pointer type
+ext2fs.c:1652: warning: assignment from incompatible pointer type
+ext2fs.c:1700: warning: assignment from incompatible pointer type
+ext2fs.c:1706: warning: assignment from incompatible pointer type
+ext2fs.c:1792: warning: assignment from incompatible pointer type
+ext2fs.c:1836: warning: assignment from incompatible pointer type
+ext2fs.c:1971: warning: format '%x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+ext2fs.c:1984: warning: assignment from incompatible pointer type
+ext2fs.c:1241: warning: unused variable 'default_used_blk'
+ext2fs.c:1240: warning: unused variable 'normal_used_blk'
+ext2fs.c:1434: warning: 'temp_val' may be used uninitialized in this function
+ext2fs.c:1841: warning: 'temp_val' may be used uninitialized in this function
+ext2fs.c:1060: warning: 'uuid[3]' may be used uninitialized in this function
+ext2fs.c:1060: warning: 'uuid[2]' may be used uninitialized in this function
+ext2fs.c:1060: warning: 'uuid[1]' may be used uninitialized in this function
+ext2fs.c:1060: warning: 'uuid[0]' may be used uninitialized in this function
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o dev.o dev.c
+arm-linux-ar crv libext2fs.a ext2fs.o dev.o
+r - ext2fs.o
+r - dev.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/fs/ext2'
+make -C net/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/net'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o net.o net.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o tftp.o tftp.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o bootp.o bootp.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o rarp.o rarp.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o eth.o eth.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o nfs.o nfs.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o sntp.o sntp.c
+arm-linux-ar crv libnet.a net.o tftp.o bootp.o rarp.o eth.o nfs.o sntp.o
+r - net.o
+r - tftp.o
+r - bootp.o
+r - rarp.o
+r - eth.o
+r - nfs.o
+r - sntp.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/net'
+make -C disk/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/disk'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o part.o part.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o part_mac.o part_mac.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o part_dos.o part_dos.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o part_iso.o part_iso.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o part_amiga.o part_amiga.c
+arm-linux-ar crv libdisk.a part.o part_mac.o part_dos.o part_iso.o part_amiga.o
+r - part.o
+r - part_mac.o
+r - part_dos.o
+r - part_iso.o
+r - part_amiga.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/disk'
+make -C drivers/bios_emulator/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/bios_emulator'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/tarena/workdir/project/gprs_security/u-boot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o atibios.o atibios.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/tarena/workdir/project/gprs_security/u-boot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o biosemu.o biosemu.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/tarena/workdir/project/gprs_security/u-boot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o besys.o besys.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/tarena/workdir/project/gprs_security/u-boot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o bios.o bios.c
+arm-linux-ar crv libatibiosemu.a atibios.o biosemu.o besys.o bios.o x86emu/decode.o x86emu/ops2.o x86emu/ops.o x86emu/prim_ops.o x86emu/sys.o x86emu/debug.o
+r - atibios.o
+r - biosemu.o
+r - besys.o
+r - bios.o
+r - x86emu/decode.o
+r - x86emu/ops2.o
+r - x86emu/ops.o
+r - x86emu/prim_ops.o
+r - x86emu/sys.o
+r - x86emu/debug.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/bios_emulator'
+make -C drivers/block/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/block'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ahci.o ahci.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ata_piix.o ata_piix.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o sil680.o sil680.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o sym53c8xx.o sym53c8xx.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o systemace.o systemace.c
+In file included from systemace.c:43:
+/home/tarena/workdir/project/gprs_security/u-boot/include/systemace.h:22: warning: #ident is a deprecated GCC extension
+arm-linux-ar crv libblock.a ahci.o ata_piix.o sil680.o sym53c8xx.o systemace.o
+r - ahci.o
+r - ata_piix.o
+r - sil680.o
+r - sym53c8xx.o
+r - systemace.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/block'
+make -C drivers/dma/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/dma'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o MCD_tasksInit.o MCD_tasksInit.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o MCD_dmaApi.o MCD_dmaApi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o MCD_tasks.o MCD_tasks.c
+arm-linux-ar crv libdma.a MCD_tasksInit.o MCD_dmaApi.o MCD_tasks.o
+r - MCD_tasksInit.o
+r - MCD_dmaApi.o
+r - MCD_tasks.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/dma'
+make -C drivers/hwmon/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/hwmon'
+arm-linux-ar crv libhwmon.a 
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/hwmon'
+make -C drivers/i2c/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/i2c'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o fsl_i2c.o fsl_i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o omap1510_i2c.o omap1510_i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o omap24xx_i2c.o omap24xx_i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o tsi108_i2c.o tsi108_i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mxc_i2c.o mxc_i2c.c
+arm-linux-ar crv libi2c.a fsl_i2c.o omap1510_i2c.o omap24xx_i2c.o tsi108_i2c.o mxc_i2c.o
+r - fsl_i2c.o
+r - omap1510_i2c.o
+r - omap24xx_i2c.o
+r - tsi108_i2c.o
+r - mxc_i2c.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/i2c'
+make -C drivers/input/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/input'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o i8042.o i8042.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o keyboard.o keyboard.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o pc_keyb.o pc_keyb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ps2ser.o ps2ser.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ps2mult.o ps2mult.c
+arm-linux-ar crv libinput.a i8042.o keyboard.o pc_keyb.o ps2ser.o ps2mult.o
+r - i8042.o
+r - keyboard.o
+r - pc_keyb.o
+r - ps2ser.o
+r - ps2mult.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/input'
+make -C drivers/misc/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/misc'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ali512x.o ali512x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ns87308.o ns87308.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o status_led.o status_led.c
+arm-linux-ar crv libmisc.a ali512x.o ns87308.o status_led.o
+r - ali512x.o
+r - ns87308.o
+r - status_led.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/misc'
+make -C drivers/mmc/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mmc'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mmc.o mmc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o s3c_hsmmc.o s3c_hsmmc.c
+s3c_hsmmc.c: In function 'sdhci_prepare_data':
+s3c_hsmmc.c:69: warning: implicit declaration of function 'virt_to_phy_cw210'
+s3c_hsmmc.c: In function 's3c_hsmmc_set_ios':
+s3c_hsmmc.c:322: warning: implicit declaration of function 'setup_sdhci0_cfg_card'
+arm-linux-ar crv libmmc.a mmc.o s3c_hsmmc.o
+r - mmc.o
+r - s3c_hsmmc.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mmc'
+make -C drivers/mtd/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mtdcore.o mtdcore.c
+In file included from /home/tarena/workdir/project/gprs_security/u-boot/include/common.h:111,
+                 from /home/tarena/workdir/project/gprs_security/u-boot/include/ubi_uboot.h:17,
+                 from mtdcore.c:12:
+/home/tarena/workdir/project/gprs_security/u-boot/include/flash.h:26: warning: "DEBUG" redefined
+/home/tarena/workdir/project/gprs_security/u-boot/include/linux/mtd/mtd.h:310: note: this is the location of the previous definition
+In file included from /home/tarena/workdir/project/gprs_security/u-boot/include/ubi_uboot.h:17,
+                 from mtdcore.c:12:
+/home/tarena/workdir/project/gprs_security/u-boot/include/common.h:122: warning: "BUG" redefined
+/home/tarena/workdir/project/gprs_security/u-boot/include/linux/mtd/compat.h:44: note: this is the location of the previous definition
+/home/tarena/workdir/project/gprs_security/u-boot/include/common.h:126: warning: "BUG_ON" redefined
+/home/tarena/workdir/project/gprs_security/u-boot/include/linux/mtd/compat.h:48: note: this is the location of the previous definition
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mtdpart.o mtdpart.c
+mtdpart.c: In function 'add_one_partition':
+mtdpart.c:351: warning: assignment from incompatible pointer type
+mtdpart.c:353: warning: assignment from incompatible pointer type
+mtdpart.c:372: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'long unsigned int'
+mtdpart.c:372: warning: format '%08x' expects type 'unsigned int', but argument 4 has type 'long unsigned int'
+mtdpart.c:379: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+mtdpart.c:379: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'long unsigned int'
+mtdpart.c:393: warning: format '%#x' expects type 'unsigned int', but argument 4 has type 'long unsigned int'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mtdconcat.o mtdconcat.c
+In file included from /home/tarena/workdir/project/gprs_security/u-boot/include/common.h:111,
+                 from /home/tarena/workdir/project/gprs_security/u-boot/include/ubi_uboot.h:17,
+                 from mtdconcat.c:14:
+/home/tarena/workdir/project/gprs_security/u-boot/include/flash.h:26: warning: "DEBUG" redefined
+/home/tarena/workdir/project/gprs_security/u-boot/include/linux/mtd/mtd.h:310: note: this is the location of the previous definition
+In file included from /home/tarena/workdir/project/gprs_security/u-boot/include/ubi_uboot.h:17,
+                 from mtdconcat.c:14:
+/home/tarena/workdir/project/gprs_security/u-boot/include/common.h:122: warning: "BUG" redefined
+/home/tarena/workdir/project/gprs_security/u-boot/include/linux/mtd/compat.h:44: note: this is the location of the previous definition
+/home/tarena/workdir/project/gprs_security/u-boot/include/common.h:126: warning: "BUG_ON" redefined
+/home/tarena/workdir/project/gprs_security/u-boot/include/linux/mtd/compat.h:48: note: this is the location of the previous definition
+mtdconcat.c: In function 'mtd_concat_create':
+mtdconcat.c:670: warning: assignment discards qualifiers from pointer target type
+mtdconcat.c:676: warning: assignment from incompatible pointer type
+mtdconcat.c:677: warning: assignment from incompatible pointer type
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mw_eeprom.o mw_eeprom.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o jedec_flash.o jedec_flash.c
+arm-linux-ar crv libmtd.a mtdcore.o mtdpart.o mtdconcat.o mw_eeprom.o jedec_flash.o
+r - mtdcore.o
+r - mtdpart.o
+r - mtdconcat.o
+r - mw_eeprom.o
+r - jedec_flash.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd'
+make -C drivers/mtd/nand/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd/nand'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand.o nand.c
+nand.c: In function 'nand_init_chip':
+nand.c:62: warning: assignment discards qualifiers from pointer target type
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_base.o nand_base.c
+nand_base.c: In function 'nand_get_flash_type':
+nand_base.c:2526: warning: statement with no effect
+nand_base.c: In function 'nand_release':
+nand_base.c:2966: warning: implicit declaration of function 'del_mtd_partitions'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_ids.o nand_ids.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_ecc.o nand_ecc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_bbt.o nand_bbt.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_util.o nand_util.c
+nand_util.c: In function 'nand_OEM_write_opts':
+nand_util.c:657: warning: pointer targets in passing argument 2 of 'FAT_OEMReadFile' differ in signedness
+/home/tarena/workdir/project/gprs_security/u-boot/include/concenwit_FAT.h:183: note: expected 'char *' but argument is of type 'u_char *'
+nand_util.c:859: warning: pointer targets in passing argument 2 of 'FAT_OEMReadFile' differ in signedness
+/home/tarena/workdir/project/gprs_security/u-boot/include/concenwit_FAT.h:183: note: expected 'char *' but argument is of type 'u_char *'
+nand_util.c: In function 'nand_OEM_write_skip_bad':
+nand_util.c:1317: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'size_t *'
+nand_util.c:1318: warning: format '%x' expects type 'unsigned int', but argument 2 has type 'ulong'
+nand_util.c:1318: warning: format '%x' expects type 'unsigned int', but argument 3 has type 'u_char *'
+nand_util.c:1424: warning: pointer targets in passing argument 2 of 'FAT_OEMReadFile' differ in signedness
+/home/tarena/workdir/project/gprs_security/u-boot/include/concenwit_FAT.h:183: note: expected 'char *' but argument is of type 'u_char *'
+nand_util.c:1325: warning: unused variable 'p_buffer'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o fsl_upm.o fsl_upm.c
+arm-linux-ar crv libnand.a nand.o nand_base.o nand_ids.o nand_ecc.o nand_bbt.o nand_util.o fsl_upm.o
+r - nand.o
+r - nand_base.o
+r - nand_ids.o
+r - nand_ecc.o
+r - nand_bbt.o
+r - nand_util.o
+r - fsl_upm.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd/nand'
+make -C drivers/mtd/nand_legacy/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd/nand_legacy'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_legacy.o nand_legacy.c
+arm-linux-ar crv libnand_legacy.a nand_legacy.o
+r - nand_legacy.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd/nand_legacy'
+make -C drivers/mtd/onenand/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd/onenand'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o onenand_uboot.o onenand_uboot.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o onenand_base.o onenand_base.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o onenand_bbt.o onenand_bbt.c
+arm-linux-ar crv libonenand.a onenand_uboot.o onenand_base.o onenand_bbt.o
+r - onenand_uboot.o
+r - onenand_base.o
+r - onenand_bbt.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd/onenand'
+make -C drivers/mtd/ubi/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd/ubi'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o build.o build.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o vtbl.o vtbl.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o vmt.o vmt.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o upd.o upd.c
+upd.c: In function 'OEM_ubi_more_update_data':
+upd.c:361: warning: passing argument 2 of 'FAT_OEMReadFile' discards qualifiers from pointer target type
+/home/tarena/workdir/project/gprs_security/u-boot/include/concenwit_FAT.h:183: note: expected 'char *' but argument is of type 'const void *'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o kapi.o kapi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o eba.o eba.c
+eba.c: In function 'ubi_eba_read_leb':
+eba.c:394: warning: 'crc' may be used uninitialized in this function
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o io.o io.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o wl.o wl.c
+wl.c: In function 'wear_leveling_worker':
+wl.c:755: warning: 'pe' may be used uninitialized in this function
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o scan.o scan.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o misc.o misc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o debug.o debug.c
+arm-linux-ar crv libubi.a build.o vtbl.o vmt.o upd.o kapi.o eba.o io.o wl.o scan.o crc32.o misc.o debug.o
+r - build.o
+r - vtbl.o
+r - vmt.o
+r - upd.o
+r - kapi.o
+r - eba.o
+r - io.o
+r - wl.o
+r - scan.o
+r - crc32.o
+r - misc.o
+r - debug.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd/ubi'
+make -C drivers/mtd/spi/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd/spi'
+arm-linux-ar crv libspi_flash.a 
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/mtd/spi'
+make -C drivers/net/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/net'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o dm9000x.o dm9000x.c
+arm-linux-ar crv libnet.a dm9000x.o
+r - dm9000x.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/net'
+make -C drivers/net/sk98lin/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/net/sk98lin'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skge.o skge.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skaddr.o skaddr.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skgehwt.o skgehwt.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skgeinit.o skgeinit.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skgepnmi.o skgepnmi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skgesirq.o skgesirq.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o ski2c.o ski2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o sklm80.o sklm80.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skqueue.o skqueue.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skrlmt.o skrlmt.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o sktimer.o sktimer.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skvpd.o skvpd.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skxmac2.o skxmac2.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skcsum.o skcsum.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o uboot_skb.o uboot_skb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o uboot_drv.o uboot_drv.c
+arm-linux-ar crv libsk98lin.a skge.o skaddr.o skgehwt.o skgeinit.o skgepnmi.o skgesirq.o ski2c.o sklm80.o skqueue.o skrlmt.o sktimer.o skvpd.o skxmac2.o skcsum.o uboot_skb.o uboot_drv.o
+r - skge.o
+r - skaddr.o
+r - skgehwt.o
+r - skgeinit.o
+r - skgepnmi.o
+r - skgesirq.o
+r - ski2c.o
+r - sklm80.o
+r - skqueue.o
+r - skrlmt.o
+r - sktimer.o
+r - skvpd.o
+r - skxmac2.o
+r - skcsum.o
+r - uboot_skb.o
+r - uboot_drv.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/net/sk98lin'
+make -C drivers/pci/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/pci'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o fsl_pci_init.o fsl_pci_init.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o pci.o pci.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o pci_auto.o pci_auto.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o pci_indirect.o pci_indirect.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o tsi108_pci.o tsi108_pci.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o w83c553f.o w83c553f.c
+arm-linux-ar crv libpci.a fsl_pci_init.o pci.o pci_auto.o pci_indirect.o tsi108_pci.o w83c553f.o
+r - fsl_pci_init.o
+r - pci.o
+r - pci_auto.o
+r - pci_indirect.o
+r - tsi108_pci.o
+r - w83c553f.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/pci'
+make -C drivers/pcmcia/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/pcmcia'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mpc8xx_pcmcia.o mpc8xx_pcmcia.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o rpx_pcmcia.o rpx_pcmcia.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o tqm8xx_pcmcia.o tqm8xx_pcmcia.c
+arm-linux-ar crv libpcmcia.a mpc8xx_pcmcia.o rpx_pcmcia.o tqm8xx_pcmcia.o
+r - mpc8xx_pcmcia.o
+r - rpx_pcmcia.o
+r - tqm8xx_pcmcia.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/pcmcia'
+make -C drivers/spi/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/spi'
+arm-linux-ar crv libspi.a 
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/spi'
+make -C drivers/rtc/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/rtc'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o bfin_rtc.o bfin_rtc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o date.o date.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds12887.o ds12887.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1302.o ds1302.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1306.o ds1306.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1307.o ds1307.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1337.o ds1337.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1374.o ds1374.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1556.o ds1556.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds164x.o ds164x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds174x.o ds174x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds3231.o ds3231.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o m41t11.o m41t11.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o m41t60.o m41t60.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o m48t35ax.o m48t35ax.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o max6900.o max6900.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mc146818.o mc146818.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mcfrtc.o mcfrtc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mk48t59.o mk48t59.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mpc5xxx.o mpc5xxx.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mpc8xx.o mpc8xx.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o pcf8563.o pcf8563.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o rs5c372.o rs5c372.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o rx8025.o rx8025.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o s3c24x0_rtc.o s3c24x0_rtc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o x1205.o x1205.c
+arm-linux-ar crv librtc.a bfin_rtc.o date.o ds12887.o ds1302.o ds1306.o ds1307.o ds1337.o ds1374.o ds1556.o ds164x.o ds174x.o ds3231.o m41t11.o m41t60.o m48t35ax.o max6900.o mc146818.o mcfrtc.o mk48t59.o mpc5xxx.o mpc8xx.o pcf8563.o rs5c372.o rx8025.o s3c24x0_rtc.o x1205.o
+r - bfin_rtc.o
+r - date.o
+r - ds12887.o
+r - ds1302.o
+r - ds1306.o
+r - ds1307.o
+r - ds1337.o
+r - ds1374.o
+r - ds1556.o
+r - ds164x.o
+r - ds174x.o
+r - ds3231.o
+r - m41t11.o
+r - m41t60.o
+r - m48t35ax.o
+r - max6900.o
+r - mc146818.o
+r - mcfrtc.o
+r - mk48t59.o
+r - mpc5xxx.o
+r - mpc8xx.o
+r - pcf8563.o
+r - rs5c372.o
+r - rx8025.o
+r - s3c24x0_rtc.o
+r - x1205.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/rtc'
+make -C drivers/serial/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/serial'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ns9750_serial.o ns9750_serial.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ns16550.o ns16550.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial.o serial.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial_pl010.o serial_pl010.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial_pl011.o serial_pl011.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial_sh.o serial_sh.c
+arm-linux-ar crv libserial.a ns9750_serial.o ns16550.o serial.o serial_pl010.o serial_pl011.o serial_sh.o
+r - ns9750_serial.o
+r - ns16550.o
+r - serial.o
+r - serial_pl010.o
+r - serial_pl011.o
+r - serial_sh.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/serial'
+make -C drivers/usb/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/usb'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o isp116x-hcd.o isp116x-hcd.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o sl811_usb.o sl811_usb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o usb_ohci.o usb_ohci.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbdcore.o usbdcore.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbdcore_ep0.o usbdcore_ep0.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbdcore_mpc8xx.o usbdcore_mpc8xx.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbdcore_omap1510.o usbdcore_omap1510.c
+arm-linux-ar crv libusb.a isp116x-hcd.o sl811_usb.o usb_ohci.o usbdcore.o usbdcore_ep0.o usbdcore_mpc8xx.o usbdcore_omap1510.o
+r - isp116x-hcd.o
+r - sl811_usb.o
+r - usb_ohci.o
+r - usbdcore.o
+r - usbdcore_ep0.o
+r - usbdcore_mpc8xx.o
+r - usbdcore_omap1510.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/usb'
+make -C drivers/video/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/video'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ati_radeon_fb.o ati_radeon_fb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cfb_console.o cfb_console.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ct69000.o ct69000.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o mb862xx.o mb862xx.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o sed13806.o sed13806.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o sed156x.o sed156x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o sm501.o sm501.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o smiLynxEM.o smiLynxEM.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o videomodes.o videomodes.c
+arm-linux-ar crv libvideo.a ati_radeon_fb.o cfb_console.o ct69000.o mb862xx.o sed13806.o sed156x.o sm501.o smiLynxEM.o videomodes.o
+r - ati_radeon_fb.o
+r - cfb_console.o
+r - ct69000.o
+r - mb862xx.o
+r - sed13806.o
+r - sed156x.o
+r - sm501.o
+r - smiLynxEM.o
+r - videomodes.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/drivers/video'
+make -C common/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/common'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o main.o main.c
+main.c: In function 'main_loop':
+main.c:632: warning: implicit declaration of function 'concenwit_logo'
+main.c: At top level:
+main.c:1277: warning: 'delete_char' defined but not used
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o ACEX1K.o ACEX1K.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o altera.o altera.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o bedbug.o bedbug.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o circbuf.o circbuf.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_memtest.o cmd_memtest.c
+cmd_memtest.c:26: warning: function declaration isn't a prototype
+cmd_memtest.c: In function 'memtest_shell':
+cmd_memtest.c:76: warning: format '%x' expects type 'unsigned int', but argument 2 has type 'u32 *'
+cmd_memtest.c:92: warning: format '%x' expects type 'unsigned int', but argument 2 has type 'u32 *'
+cmd_memtest.c:107: warning: format '%x' expects type 'unsigned int', but argument 2 has type 'u32 *'
+cmd_memtest.c:27: warning: unused variable 'i'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_autoscript.o cmd_autoscript.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_bdinfo.o cmd_bdinfo.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o image.o image.c
+image.c: In function 'genimg_get_format':
+image.c:643: warning: format '%x' expects type 'unsigned int', but argument 2 has type 'ulong'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o gunzip.o gunzip.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_boot.o cmd_boot.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_bootm.o cmd_bootm.c
+cmd_bootm.c: In function 'do_bootm':
+cmd_bootm.c:211: warning: implicit declaration of function 'virt_to_phy_cw210'
+cmd_bootm.c:137: warning: 'hdr' may be used uninitialized in this function
+cmd_bootm.c:139: warning: 'iflag' may be used uninitialized in this function
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_cache.o cmd_cache.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_console.o cmd_console.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_date.o cmd_date.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_eeprom.o cmd_eeprom.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_elf.o cmd_elf.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_ext2.o cmd_ext2.c
+cmd_ext2.c: In function 'do_ext3_format':
+cmd_ext2.c:316: warning: control reaches end of non-void function
+cmd_ext2.c: In function 'do_ext2_format':
+cmd_ext2.c:304: warning: control reaches end of non-void function
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_fat.o cmd_fat.c
+In file included from cmd_fat.c:37:
+/home/tarena/workdir/project/gprs_security/u-boot/include/fat.h:195: warning: function declaration isn't a prototype
+cmd_fat.c: In function 'do_fat_fsload':
+cmd_fat.c:59: warning: implicit declaration of function 'find_mmc_device'
+cmd_fat.c:59: warning: assignment makes pointer from integer without a cast
+cmd_fat.c:60: warning: implicit declaration of function 'mmc_init'
+cmd_fat.c: In function 'do_fat_fsinfo':
+cmd_fat.c:189: warning: too many arguments for format
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_fdc.o cmd_fdc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_flash.o cmd_flash.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_itest.o cmd_itest.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_load.o cmd_load.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_mem.o cmd_mem.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_misc.o cmd_misc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_mmc.o cmd_mmc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_mtdparts.o cmd_mtdparts.c
+cmd_mtdparts.c: In function 'do_mtdparts':
+cmd_mtdparts.c:1860: warning: label 'usage' defined but not used
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_nand.o cmd_nand.c
+cmd_nand.c: In function 'nand_block_write':
+cmd_nand.c:145: warning: assignment discards qualifiers from pointer target type
+cmd_nand.c: In function 'arg_off':
+cmd_nand.c:259: warning: implicit declaration of function 'mtdparts_init'
+cmd_nand.c:260: warning: implicit declaration of function 'find_dev_and_part'
+cmd_nand.c: In function 'arg_off_size':
+cmd_nand.c:308: warning: passing argument 2 of 'str2long' from incompatible pointer type
+cmd_nand.c:242: note: expected 'ulong *' but argument is of type 'size_t *'
+cmd_nand.c: In function 'do_nand':
+cmd_nand.c:642: warning: implicit declaration of function 'nand_OEM_write_opts'
+cmd_nand.c:366: warning: unused variable 'pSize'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_net.o cmd_net.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_nvedit.o cmd_nvedit.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_pcmcia.o cmd_pcmcia.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_reginfo.o cmd_reginfo.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_ubi.o cmd_ubi.c
+cmd_ubi.c: In function 'ubi_volume_OEM_write':
+cmd_ubi.c:307: warning: implicit declaration of function 'OEM_ubi_more_update_data'
+cmd_ubi.c: In function 'ubi_dev_scan':
+cmd_ubi.c:494: warning: implicit declaration of function 'find_dev_and_part'
+cmd_ubi.c: In function 'do_ubi':
+cmd_ubi.c:535: warning: implicit declaration of function 'mtdparts_init'
+cmd_ubi.c:560: warning: implicit declaration of function 'cmd_usage'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_usbd.o cmd_usbd.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_ximg.o cmd_ximg.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_vfd.o cmd_vfd.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o command.o command.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o console.o console.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cyclon2.o cyclon2.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o stratixII.o stratixII.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o devices.o devices.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o dlmalloc.o dlmalloc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o docecc.o docecc.c
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wa,--no-warn \
+		-DENV_CRC=0 \
+		-c -o environment.o environment.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_common.o env_common.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_dataflash.o env_dataflash.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_flash.o env_flash.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_eeprom.o env_eeprom.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_sf.o env_sf.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_nvram.o env_nvram.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_nowhere.o env_nowhere.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o exports.o exports.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o flash.o flash.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o fpga.o fpga.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o hush.o hush.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o kgdb.o kgdb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o lcd.o lcd.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o lists.o lists.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o lynxkdi.o lynxkdi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o memsize.o memsize.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o miiphybb.o miiphybb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o miiphyutil.o miiphyutil.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o s_record.o s_record.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial.o serial.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o soft_i2c.o soft_i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o soft_spi.o soft_spi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o spartan2.o spartan2.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o spartan3.o spartan3.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o usb.o usb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o usb_kbd.o usb_kbd.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o usb_storage.o usb_storage.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o virtex2.o virtex2.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o xilinx.o xilinx.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o xyzModem.o xyzModem.c
+xyzModem.c: In function 'xyzModem_stream_open':
+xyzModem.c:564: warning: 'dummy' is used uninitialized in this function
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_mac.o cmd_mac.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_movi.o cmd_movi.c
+cmd_movi.c: In function 'do_movi':
+cmd_movi.c:732: warning: implicit declaration of function 'movi_write_bl1'
+cmd_movi.c: In function 'init_raw_area_table':
+cmd_movi.c:606: warning: control reaches end of non-void function
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_android.o cmd_android.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_fastboot.o cmd_fastboot.c
+cmd_fastboot.c: In function 'rx_handler':
+cmd_fastboot.c:1007: warning: unused variable 'hdr'
+cmd_fastboot.c: At top level:
+cmd_fastboot.c:1289: warning: function declaration isn't a prototype
+In file included from cmd_fastboot.c:1595:
+/home/tarena/workdir/project/gprs_security/u-boot/include/fat.h:195: warning: function declaration isn't a prototype
+cmd_fastboot.c: In function 'update_from_sd':
+cmd_fastboot.c:1645: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'long int'
+cmd_fastboot.c:1664: warning: pointer targets in passing argument 1 of 'rx_handler' differ in signedness
+cmd_fastboot.c:629: note: expected 'const unsigned char *' but argument is of type 'char *'
+cmd_fastboot.c: In function 'do_sdfuse':
+cmd_fastboot.c:1680: warning: implicit declaration of function 'find_mmc_device'
+cmd_fastboot.c:1680: warning: initialization makes pointer from integer without a cast
+cmd_fastboot.c:1682: warning: implicit declaration of function 'mmc_init'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_mmc_fdisk.o cmd_mmc_fdisk.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/tarena/workdir/project/gprs_security/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5te -mabi=apcs-gnu -mno-thumb-interwork -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_nand.o env_nand.c
+arm-linux-ar crv libcommon.a main.o ACEX1K.o altera.o bedbug.o circbuf.o cmd_memtest.o cmd_autoscript.o cmd_bdinfo.o image.o gunzip.o cmd_boot.o cmd_bootm.o cmd_cache.o cmd_console.o cmd_date.o cmd_eeprom.o cmd_elf.o cmd_ext2.o cmd_fat.o cmd_fdc.o cmd_flash.o cmd_itest.o cmd_load.o cmd_mem.o cmd_misc.o cmd_mmc.o cmd_mtdparts.o cmd_nand.o cmd_net.o cmd_nvedit.o cmd_pcmcia.o cmd_reginfo.o cmd_ubi.o cmd_usbd.o cmd_ximg.o cmd_vfd.o command.o console.o cyclon2.o stratixII.o devices.o dlmalloc.o docecc.o environment.o env_common.o env_dataflash.o env_flash.o env_eeprom.o env_sf.o env_nvram.o env_nowhere.o exports.o flash.o fpga.o hush.o kgdb.o lcd.o lists.o lynxkdi.o memsize.o miiphybb.o miiphyutil.o s_record.o serial.o soft_i2c.o soft_spi.o spartan2.o spartan3.o usb.o usb_kbd.o usb_storage.o virtex2.o xilinx.o crc16.o xyzModem.o cmd_mac.o cmd_movi.o cmd_android.o cmd_fastboot.o cmd_mmc_fdisk.o ace_sha1.o secure_boot.o env_nand.o
+r - main.o
+r - ACEX1K.o
+r - altera.o
+r - bedbug.o
+r - circbuf.o
+r - cmd_memtest.o
+r - cmd_autoscript.o
+r - cmd_bdinfo.o
+r - image.o
+r - gunzip.o
+r - cmd_boot.o
+r - cmd_bootm.o
+r - cmd_cache.o
+r - cmd_console.o
+r - cmd_date.o
+r - cmd_eeprom.o
+r - cmd_elf.o
+r - cmd_ext2.o
+r - cmd_fat.o
+r - cmd_fdc.o
+r - cmd_flash.o
+r - cmd_itest.o
+r - cmd_load.o
+r - cmd_mem.o
+r - cmd_misc.o
+r - cmd_mmc.o
+r - cmd_mtdparts.o
+r - cmd_nand.o
+r - cmd_net.o
+r - cmd_nvedit.o
+r - cmd_pcmcia.o
+r - cmd_reginfo.o
+r - cmd_ubi.o
+r - cmd_usbd.o
+r - cmd_ximg.o
+r - cmd_vfd.o
+r - command.o
+r - console.o
+r - cyclon2.o
+r - stratixII.o
+r - devices.o
+r - dlmalloc.o
+r - docecc.o
+r - environment.o
+r - env_common.o
+r - env_dataflash.o
+r - env_flash.o
+r - env_eeprom.o
+r - env_sf.o
+r - env_nvram.o
+r - env_nowhere.o
+r - exports.o
+r - flash.o
+r - fpga.o
+r - hush.o
+r - kgdb.o
+r - lcd.o
+r - lists.o
+r - lynxkdi.o
+r - memsize.o
+r - miiphybb.o
+r - miiphyutil.o
+r - s_record.o
+r - serial.o
+r - soft_i2c.o
+r - soft_spi.o
+r - spartan2.o
+r - spartan3.o
+r - usb.o
+r - usb_kbd.o
+r - usb_storage.o
+r - virtex2.o
+r - xilinx.o
+r - crc16.o
+r - xyzModem.o
+r - cmd_mac.o
+r - cmd_movi.o
+r - cmd_android.o
+r - cmd_fastboot.o
+r - cmd_mmc_fdisk.o
+r - ace_sha1.o
+r - secure_boot.o
+r - env_nand.o
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/common'
+make -C libfdt/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/libfdt'
+arm-linux-ar crv libfdt.a 
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/libfdt'
+make -C api/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/api'
+arm-linux-ar crv libapi.a 
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/api'
+make -C post/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/post'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/post'
+make -C board/CONCENWIT/CW210/
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/board/CONCENWIT/CW210'
+make[2]: `libCW210.a' is up to date.
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/board/CONCENWIT/CW210'
+make -C /home/tarena/workdir/project/gprs_security/u-boot/board/CONCENWIT/CW210/ u-boot.lds
+make[2]: Entering directory `/home/tarena/workdir/project/gprs_security/u-boot/board/CONCENWIT/CW210'
+make[2]: Nothing to be done for `u-boot.lds'.
+make[2]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot/board/CONCENWIT/CW210'
+UNDEF_SYM=`arm-linux-objdump -x board/CONCENWIT/CW210/libCW210.a lib_generic/libgeneric.a cpu/s5pv210/libs5pv210.a cpu/s5pv210/s5pv210/libs5pv210.a lib_arm/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a net/libnet.a disk/libdisk.a drivers/bios_emulator/libatibiosemu.a drivers/block/libblock.a drivers/dma/libdma.a drivers/hwmon/libhwmon.a drivers/i2c/libi2c.a drivers/input/libinput.a drivers/misc/libmisc.a drivers/mmc/libmmc.a drivers/mtd/libmtd.a drivers/mtd/nand/libnand.a drivers/mtd/nand_legacy/libnand_legacy.a drivers/mtd/onenand/libonenand.a drivers/mtd/ubi/libubi.a drivers/mtd/spi/libspi_flash.a drivers/net/libnet.a drivers/net/sk98lin/libsk98lin.a drivers/pci/libpci.a drivers/pcmcia/libpcmcia.a drivers/spi/libspi.a drivers/rtc/librtc.a drivers/serial/libserial.a drivers/usb/libusb.a drivers/video/libvideo.a common/libcommon.a libfdt/libfdt.a api/libapi.a post/libpost.a | \
+		sed  -n -e 's/.*\(__u_boot_cmd_.*\)/-u\1/p'|sort|uniq`;\
+		cd /home/tarena/workdir/project/gprs_security/u-boot && arm-linux-ld -Bstatic -T /home/tarena/workdir/project/gprs_security/u-boot/board/CONCENWIT/CW210/u-boot.lds  -Ttext 0xc3e00000 $UNDEF_SYM cpu/s5pv210/start.o \
+			--start-group lib_generic/libgeneric.a cpu/s5pv210/libs5pv210.a cpu/s5pv210/s5pv210/libs5pv210.a lib_arm/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a net/libnet.a disk/libdisk.a drivers/bios_emulator/libatibiosemu.a drivers/block/libblock.a drivers/dma/libdma.a drivers/hwmon/libhwmon.a drivers/i2c/libi2c.a drivers/input/libinput.a drivers/misc/libmisc.a drivers/mmc/libmmc.a drivers/mtd/libmtd.a drivers/mtd/nand/libnand.a drivers/mtd/nand_legacy/libnand_legacy.a drivers/mtd/onenand/libonenand.a drivers/mtd/ubi/libubi.a drivers/mtd/spi/libspi_flash.a drivers/net/libnet.a drivers/net/sk98lin/libsk98lin.a drivers/pci/libpci.a drivers/pcmcia/libpcmcia.a drivers/spi/libspi.a drivers/rtc/librtc.a drivers/serial/libserial.a drivers/usb/libusb.a drivers/video/libvideo.a common/libcommon.a libfdt/libfdt.a api/libapi.a post/libpost.a board/CONCENWIT/CW210/libCW210.a --end-group -L /home/tarena/workdir/toolchains/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1 -lgcc \
+			-Map u-boot.map -o u-boot
+arm-linux-objcopy --gap-fill=0xff -O srec u-boot u-boot.srec
+arm-linux-objcopy --gap-fill=0xff -O binary u-boot u-boot.bin
+arm-linux-objdump -d u-boot > u-boot.dis
+make[1]: Leaving directory `/home/tarena/workdir/project/gprs_security/u-boot'

@@ -1,0 +1,36 @@
+make[1]: Entering directory `/home/tarena/workdir/project/gprs_security/pc/PCOM'
+rm -f moc_logdialog.cpp moc_mainwindow.cpp moc_netdialog.cpp moc_uartdialog.cpp
+rm -f ui_logdialog.h ui_mainwindow.h ui_netdialog.h ui_uartdialog.h
+rm -f init.o logdialog.o main.o mainwindow.o message.o netdialog.o uartdialog.o moc_logdialog.o moc_mainwindow.o moc_netdialog.o moc_uartdialog.o
+rm -f *~ core *.core
+rm -f PCOM 
+rm -f Makefile
+make[1]: Leaving directory `/home/tarena/workdir/project/gprs_security/pc/PCOM'
+make[1]: Entering directory `/home/tarena/workdir/project/gprs_security/pc/PCOM'
+/usr/bin/uic-qt4 logdialog.ui -o ui_logdialog.h
+/usr/bin/uic-qt4 mainwindow.ui -o ui_mainwindow.h
+/usr/bin/uic-qt4 netdialog.ui -o ui_netdialog.h
+/usr/bin/uic-qt4 uartdialog.ui -o ui_uartdialog.h
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o init.o init.cpp
+init.cpp: In function ‘void setBps(int, int)’:
+init.cpp:18:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o logdialog.o logdialog.cpp
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o main.o main.cpp
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o mainwindow.o mainwindow.cpp
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o message.o message.cpp
+message.cpp: In member function ‘void MainWindow::EepromSettingFunction()’:
+message.cpp:145:9: warning: unused variable ‘i’ [-Wunused-variable]
+message.cpp: In member function ‘int MainWindow::recv_rsp_message(void*, int)’:
+message.cpp:599:29: warning: pointer of type ‘void *’ used in arithmetic [-Wpointer-arith]
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o netdialog.o netdialog.cpp
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o uartdialog.o uartdialog.cpp
+/usr/bin/moc-qt4 -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. logdialog.h -o moc_logdialog.cpp
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o moc_logdialog.o moc_logdialog.cpp
+/usr/bin/moc-qt4 -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. mainwindow.h -o moc_mainwindow.cpp
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o moc_mainwindow.o moc_mainwindow.cpp
+/usr/bin/moc-qt4 -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. netdialog.h -o moc_netdialog.cpp
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o moc_netdialog.o moc_netdialog.cpp
+/usr/bin/moc-qt4 -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. uartdialog.h -o moc_uartdialog.cpp
+g++ -c -pipe -O2 -Wall -W -D_REENTRANT -DQT_WEBKIT -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I. -I. -I. -o moc_uartdialog.o moc_uartdialog.cpp
+g++ -Wl,-O1 -o PCOM init.o logdialog.o main.o mainwindow.o message.o netdialog.o uartdialog.o moc_logdialog.o moc_mainwindow.o moc_netdialog.o moc_uartdialog.o    -L/usr/lib/i386-linux-gnu -lQtGui -lQtCore -lpthread 
+make[1]: Leaving directory `/home/tarena/workdir/project/gprs_security/pc/PCOM'
