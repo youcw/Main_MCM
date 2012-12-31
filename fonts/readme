@@ -1,0 +1,4 @@
+1.首先配置好profile环境变量
+2. QFont font("WenQuanYi Zen Hei", 12, QFont::Normal);
+   this->setFont(font);
+   注意WenQuanYi Zen Hei空格不能少

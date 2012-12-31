@@ -1,0 +1,24 @@
+# Ash profile 
+# vim: syntax=sh
+
+export QTDIR=/usr/local/qt
+export TSLIBDIR=/usr/local/tslib
+export PATH=$QTDIR/bin:$TSLIBDIR/bin:$PATH
+export LD_LIBRARY_PATH=$QTDIR/lib:$TSLIBDIR/lib:$LD_LIBRARY_PATH
+export TSLIB_FBDEVICE=/dev/fb0
+export TSLIB_TSDEVICE=/dev/event2
+export TSLIB_CONFFILE=/usr/local/tslib/etc/ts.conf
+export TSLIB_PLUGINDIR=/usr/local/tslib/lib/ts
+export TSLIB_CALIBFILE=/etc/pointercal
+export TSLIB_CONSOLEDEVICE=none
+export QWS_MOUSE_PROTO=Tslib:/dev/event2
+export QWS_SIZE=800X480
+#4.7以后默认用TTY
+export QWS_KEYBOARD=TTY:/dev/event0
+#4.7版本之前用的是
+#(qt4.5.2)
+#export QWS_KEYBOARD=USB:/dev/event0
+export QT_QWS_FONTDIR=$QTDIR/lib/fonts
+#字体显示有关系
+export QWS_DISPLAY="LinuxFB:mmWidth180:0"
+
