@@ -1,10 +1,10 @@
 /********************************************************************************
-** Form generated from reading ui file 'mainwindow.ui'
+** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Dec 7 17:17:28 2012
-**      by: Qt User Interface Compiler version 4.5.2
+** Created: Sat Jan 5 10:59:28 2013
+**      by: Qt User Interface Compiler version 4.8.4
 **
-** WARNING! All changes made in this file will be lost when recompiling ui file!
+** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
 #ifndef UI_MAINWINDOW_H
