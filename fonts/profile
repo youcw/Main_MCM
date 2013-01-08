@@ -1,24 +1,44 @@
 # Ash profile 
 # vim: syntax=sh
 
-export QTDIR=/usr/local/qt
-export TSLIBDIR=/usr/local/tslib
+export QTDIR=/home/qtopia/qt
+export TSLIBDIR=/home/qtopia/tslib
 export PATH=$QTDIR/bin:$TSLIBDIR/bin:$PATH
 export LD_LIBRARY_PATH=$QTDIR/lib:$TSLIBDIR/lib:$LD_LIBRARY_PATH
 export TSLIB_FBDEVICE=/dev/fb0
-export TSLIB_TSDEVICE=/dev/event2
-export TSLIB_CONFFILE=/usr/local/tslib/etc/ts.conf
-export TSLIB_PLUGINDIR=/usr/local/tslib/lib/ts
-export TSLIB_CALIBFILE=/etc/pointercal
+#触摸屏设备节点
+export TSLIB_TSDEVICE=/dev/event3
+
+export TSLIB_CONFFILE=$TSLIBDIR/etc/ts.conf
+export TSLIB_PLUGINDIR=$TSLIBDIR/lib/ts
+export TSLIB_CALIBFILE=$TSLIBDIR/etc/pointercal
 export TSLIB_CONSOLEDEVICE=none
-export QWS_MOUSE_PROTO=Tslib:/dev/event2
+#同时支持触摸屏(/dev/event1)和USB鼠标(/dev/mouse2,不是/dev/event3,具体可以通过cat /proc/bus/input/devices查看对应关系)
+#export QWS_MOUSE_PROTO="Tslib:/dev/event1 Intellimouse:/dev/mouse2"
+
+export QWS_MOUSE_PROTO="Tslib:/dev/event3"
+
+#屏幕大小
 export QWS_SIZE=800X480
-#4.7以后默认用TTY
-export QWS_KEYBOARD=TTY:/dev/event0
-#4.7版本之前用的是
+
+#按键支持(包括板卡ＧＰＩＯ按键和ＵＳＢ标准键盘,必须遵循input子系统)
+#export QWS_KEYBOARD="TTY:/dev/event4 TTY:/dev/event5"
+#export QWS_KEYBOARD="TTY:/dev/event1"
+
 #(qt4.5.2)
-#export QWS_KEYBOARD=USB:/dev/event0
+export QWS_KEYBOARD=USB:/dev/event1
+
+#字库
 export QT_QWS_FONTDIR=$QTDIR/lib/fonts
+
+#图片显示相关
+export QT_PLUGIN_PATH=$QTDIR/plugins
+
 #字体显示有关系
 export QWS_DISPLAY="LinuxFB:mmWidth180:0"
-
+if [ ! -f $TSLIB_CALIBFILE ];then
+        echo "calibrate and reboot system"
+        ts_calibrate
+        reboot
+fi
+/home/app/server -qws &
